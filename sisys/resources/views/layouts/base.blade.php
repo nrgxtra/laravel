@@ -87,7 +87,7 @@
         <div class="container">
             <div class="mobile-responsive-menu">
                 <div class="logo">
-                    <a href="{{route('home')}}">
+                    <a href="{{route('landing')}}">
                         <img src="{{asset('/storage/assets/images/logos/logo-small.png')}}" class="logo-one" alt="logo">
                         <img src="{{asset('/storage/assets/images/logos/logo-white-small.png')}}" class="logo-two" alt="logo">
                     </a>
@@ -100,7 +100,7 @@
     <div class="desktop-nav nav-area">
         <div class="container-fluid">
             <nav class="navbar navbar-expand-md navbar-light ">
-                <a class="navbar-brand" href="{{route('home')}}">
+                <a class="navbar-brand" href="{{route('landing')}}">
                     <img src="{{asset('/storage/assets/images/logos/logo-small.png')}}" class="logo-one" alt="Logo">
                     <img src="{{asset('/storage/assets/images/logos/logo-white-small.png')}}" class="logo-two" alt="Logo">
                 </a>
@@ -302,10 +302,10 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="footer-widget pe-5">
                     <div class="footer-logo">
-                        <a href="{{route('home')}}">
+                        <a href="{{route('landing')}}">
                             <img src="{{asset('/storage/assets/images/logos/logo-small.png')}}" class="footer-logo1" alt="Images">
                         </a>
-                        <a href="{{route('home')}}">
+                        <a href="{{route('landing')}}">
                             <img src="{{asset('/storage/assets/images/logos/logo-white-small.png')}}" class="footer-logo2" alt="Images">
                         </a>
                     </div>
