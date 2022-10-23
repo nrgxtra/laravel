@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta name="description" content="name of web site">
+<meta name="author" content="FriendsLaboratory">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<title>Homepage | Makeup</title>
+
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+
+<!-- STYLES -->
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}" />
+<link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}" />
+<!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->
+<!-- /STYLES -->
+
+</head>
+
+<body>
+
+
+<!-- WRAPPER ALL -->
+<div class="makeup_fl_wrapper_all">
+
+    <!-- CONTENT -->
+    <div class="makeup_fl_content">
+    	<div class="container">
+
+
+
+    			<!-- VERTICAL MENU -->
+    			<div class="makeup_fl_ver_menu sticky_sidebar">
+					<div class="vertical_menu">
+						<div class="makeup_fl_ver_menu_in">
+							<div class="makeup_fl_logo">
+								<img src="{{asset('storage/img/logo.png')}}" alt="" />
+							</div>
+							<div class="makeup_fl_nav_list">
+								<ul>
+									<li><a href="index.html"><span>Homepage</span></a></li>
+									<li><a href="about.html"><span>About Us</span></a></li>
+									<li><a href="services.html"><span>Services</span></a></li>
+									<li><a href="gallery.html"><span>Gallery</span></a></li>
+									<li><a href="blog.html"><span>Our Blog</span></a></li>
+									<li><a href="contact.html"><span>Contact Us</span></a></li>
+								</ul>
+							</div>
+							<div class="makeup_fl_booking_btn">
+								<div class="btn_s_a"><a href="modal/address.html" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+								<div class="btn_b"><a href="modal/booking.html" class="ajax-popup-link">Book Online</a></div>
+								<div class="btn_s_b"><a href="modal/opening.html" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+							</div>
+							<div class="makeup_fl_social_icons">
+								<ul>
+									<li><a href="#"><i class="xcon-facebook"></i></a></li>
+									<li><a href="#"><i class="xcon-twitter"></i></a></li>
+									<li><a href="#"><i class="xcon-instagram"></i></a></li>
+									<li><a href="#"><i class="xcon-pinterest"></i></a></li>
+									<li><a href="#"><i class="xcon-gplus"></i></a></li>
+								</ul>
+							</div>
+							<div class="makeup_fl_cright">
+								<span>Copyright 2017. Built with love.<br />Powered by <a href="https://themeforest.net/user/friendslaboratory">FriendsLaboratory</a></span>
+							</div>
+							<div class="makeup_fl_totop_wrapper">
+								<div class="rotating"></div>
+								<a href="#" class="totop"><i class="xcon-angle-up"></i></a>
+							</div>
+						</div>
+					</div>
+    			</div>
+    			<!-- /VERTICAL MENU -->
+
+
+    			<!-- CONTENT IN -->
+    			<div class="makeup_fl_content_in sticky_sidebar">
+    				<div class="makeup_fl_content_in_qq">
+
+						<!-- HEADER -->
+						<div class="makeup_fl_header">
+							<div class="makeup_fl_logo">
+								<img src="{{asset('storage/img/logo.png')}}" alt="" />
+							</div>
+							<div class="makeup_fl_header_trigger">
+								<a href="#"></a>
+								<span class="one"></span>
+								<span class="two"></span>
+								<span class="three"></span>
+							</div>
+							<div class="makeup_fl_booking_btn">
+								<div class="btn_s_a"><a href="modal/address.html" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+								<div class="btn_b"><a href="modal/booking.html" class="ajax-popup-link">Book Online</a></div>
+								<div class="btn_s_b"><a href="modal/opening.html" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+							</div>
+							<div class="clearfix"></div>
+							<div class="makeup_fl_header_nav_list">
+								<ul>
+									<li class="mversion">
+										<div class="makeup_fl_booking_btn">
+											<div class="btn_s_a"><a href="modal/address.html" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+											<div class="btn_b"><a href="modal/booking.html" class="ajax-popup-link">Book Online</a></div>
+											<div class="btn_s_b"><a href="modal/opening.html" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+										</div>
+									</li>
+									<li><a href="index.html"><span>Homepage</span><br /><span class="row"></span></a></li>
+									<li><a href="about.html"><span>About Us</span></a></li>
+									<li><a href="services.html"><span>Services</span></a></li>
+									<li><a href="gallery.html"><span>Gallery</span></a></li>
+									<li><a href="blog.html"><span>Our Blog</span></a></li>
+									<li><a href="contact.html"><span>Contact Us</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<!-- /HEADER -->
+
+
+						<!-- CONTENT WRAP -->
+						<div class="makeup_fl_content_wrap">
+
+
+							<!-- FOTORAMA -->
+							<div class="makeup_fl_fotorama">
+								<div class="fotorama" data-nav="thumbs"  data-autoplay="4000" data-loop="true" data-keyboard="true"  data-arrows="true" data-click="true" data-swipe="true" data-stopautoplayontouch="false" data-transition="slide" data-fit="cover" data-width="100%">
+								  <a href="{{asset('storage/img/fotorama/full1.jpg')}}">
+								  	<img src="{{asset('storage/img/fotorama/thumb1.jpg')}}" width="144" height="96" alt="" />
+								  </a>
+								  <a href="{{asset('storage/img/fotorama/full2.jpg')}}">
+								  	<img src="{{asset('storage/img/fotorama/thumb2.jpg')}}" width="144" height="96" alt="" />
+								  </a>
+								  <a href="{{asset('storage/img/fotorama/full3.jpg')}}">
+								  	<img src="{{asset('storage/img/fotorama/thumb3.jpg')}}" width="144" height="96" alt="" />
+								  </a>
+								  <a href="{{asset('storage/img/fotorama/full4.jpg')}}">
+								  	<img src="{{asset('storage/img/fotorama/thumb4.jpg')}}" width="144" height="96" alt="" />
+								  </a>
+								  <a href="{{asset('storage/img/fotorama/full5.jpg')}}">
+								  	<img src="{{asset('storage/img/fotorama/thumb5.jpg')}}" width="144" height="96" alt="" />
+								  </a>
+								</div>
+							</div>
+							<!-- /FOTORAMA -->
+
+							<!-- TESTIMONIALS -->
+							<div class="makeup_fl_content_testimonials">
+								<div class="testimonials">
+									<div class="quote"><i class="xcon-quote-right-alt"></i></div>
+									<div class="owl-carousel owl-theme">
+										<div class="item">
+											<p>Aliquam metus ex, laoreet in nulla et, varius aliquam est. Vestibulum neque dui, auctor sit amet tincidunt ac, sodales sit amet est. Quisque gravida sit amet odio sed vulputate. Curabitur eleifend.</p>
+											<br />
+											<span>Laura Brandon</span>
+										</div>
+										<div class="item">
+											<p>Sed ultrices eleifend risus eu convallis. Cras lacinia interdum ligula id posuere. Sed nec diam libero. Nunc arcu orci, mollis nec condimentum tincidunt, facilisis in nunc. Quisque malesuada molestie.</p>
+											<br />
+											<span>Britney Spears</span>
+										</div>
+										<div class="item">
+											<p>Integer viverra non eros ac sollicitudin. Nunc lorem erat, finibus at consectetur in, vestibulum tristique ligula. Fusce nunc tortor, gravida fermentum diam in, dictum vestibulum libero.</p>
+											<br />
+											<span>Selena Gomez</span>
+										</div>
+										<div class="item">
+											<p>Praesent in augue in purus iaculis scelerisque. Etiam at gravida neque. Proin nulla magna, tempus in leo non, maximus efficitur purus. Mauris vel mollis est. Suspendisse maximus cursus feugiat.</p>
+											<br />
+											<span>Paula Samry</span>
+										</div>
+										<div class="item">
+											<p>Curabitur eget varius augue, non feugiat nisl. Duis fermentum est vel quam pharetra accumsan. Nulla sodales leo nisl, vel dignissim lacus finibus sit amet. Pellentesque elementum lacinia leo eget pulvinar.</p>
+											<br />
+											<span>Wendy Clifford</span>
+										</div>
+									</div>
+									<div class="prev_next_btn">
+										<a href="#" class="prev"><i class="xcon-angle-left"></i></a>
+										<a href="#" class="next"><i class="xcon-angle-right"></i></a>
+									</div>
+								</div>
+
+							</div>
+							<!-- /TESTIMONIALS -->
+
+							<!-- PACKAGE LIST -->
+							<div class="makeup_fl_package_list makeup_fl_masonry">
+
+								<!-- PACKAGE LIST #1 -->
+								<div class="makeup_fl_package_list_in makeup_fl_masonry_in">
+									<div class="pckg_img">
+										<img src="{{asset('storage/img/package1.jpg')}}" alt="" />
+									</div>
+									<div class="pckg_info">
+										<div class="title_holder">
+											<h3>Party Makeup Package</h3>
+											<span>Time Duration : 2 - 3 hours</span>
+										</div>
+										<div class="price_list">
+											<ul>
+												<li>
+													<div class="price_li">
+														<span class="span1">Makeup Consultation</span>
+														<span class="span2">$19.00</span>
+													</div>
+												</li>
+												<li>
+													<div class="price_li">
+														<span class="span1">Signature Haircut &amp; Style</span>
+														<span class="span2">$25.00</span>
+													</div>
+												</li>
+												<li>
+													<div class="price_li">
+														<span class="span1">Airbrush Makeup</span>
+														<span class="span2">$31.00</span>
+													</div>
+												</li>
+												<li>
+													<div class="price_li">
+														<span class="span1">False Lash Application</span>
+														<span class="span2">$24.00</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="total"><span>Total: $99.00</span></div>
+										<div class="footer">
+											<div class="footer_btn">
+												<a href="modal/booking.html" class="ajax-popup-link">Book Online</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /PACKAGE LIST #1 -->
+
+
+								<!-- PACKAGE LIST #2 -->
+								<div class="makeup_fl_package_list_in makeup_fl_masonry_in">
+									<div class="pckg_img">
+										<img src="{{asset('storage/img/package2.jpg')}}" alt="" />
+									</div>
+									<div class="pckg_info">
+										<div class="title_holder">
+											<h3>Commercial Makeup Package</h3>
+											<span>Time Duration : 2 - 3 hours</span>
+										</div>
+										<div class="price_list">
+											<ul>
+												<li>
+													<div class="price_li">
+														<span class="span1">Makeup Consultation</span>
+														<span class="span2">$19.00</span>
+													</div>
+												</li>
+												<li>
+													<div class="price_li">
+														<span class="span1">Event Makeup Application</span>
+														<span class="span2">$35.00</span>
+													</div>
+												</li>
+												<li>
+													<div class="price_li">
+														<span class="span1">Benefit Lash Application</span>
+														<span class="span2">$10.00</span>
+													</div>
+												</li>
+												<li>
+													<div class="price_li">
+														<span class="span1">Lip &amp; Chin Wax</span>
+														<span class="span2">$22.00</span>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="total"><span>Total: $86.00</span></div>
+										<div class="footer">
+											<div class="footer_btn">
+												<a href="modal/booking.html" class="ajax-popup-link">Book Online</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /PACKAGE LIST #2 -->
+
+							</div>
+							<!-- /PACKAGE LIST -->
+
+						</div>
+						<!-- /CONTENT WRAP -->
+
+
+
+						<!-- FOOTER -->
+						<div class="makeup_fl_footer">
+							<div class="social_icons">
+								<ul>
+									<li><a href="#"><i class="xcon-facebook"></i></a></li>
+									<li><a href="#"><i class="xcon-twitter"></i></a></li>
+									<li><a href="#"><i class="xcon-linkedin"></i></a></li>
+									<li><a href="#"><i class="xcon-pinterest"></i></a></li>
+									<li><a href="#"><i class="xcon-instagram"></i></a></li>
+								</ul>
+							</div>
+							<div class="cright">
+								<span>&copy; Copyright by <a href="https://themeforest.net/user/friendslaboratory">FriendsLaboratory</a> 2017</span>
+							</div>
+							<div class="makeup_fl_totop_wrapper">
+								<div class="rotating"></div>
+								<a href="#" class="totop"><i class="xcon-angle-up"></i></a>
+							</div>
+						</div>
+						<!-- /FOOTER -->
+
+					</div>
+    			</div>
+    			<!-- /CONTENT IN -->
+
+    	</div>
+    </div>
+    <!-- /CONTENT -->
+
+</div>
+<!-- /WRAPPER ALL -->
+
+
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="{{asset('storage/js/jquery.js')}}"></script>
+<script type="text/javascript" src="{{asset('storage/js/carousel.js')}}"></script>
+<script type="text/javascript" src="{{asset('storage/js/plugins.js')}}"></script>
+<!--[if lt IE 10]> <script type="text/javascript" src="{{asset('storage/js/ie8.js')}}"></script> <![endif]-->
+<script type="text/javascript" src="{{asset('storage/js/init.js')}}"></script>
+<!-- /SCRIPTS -->
+
+</body>
+</html>
