@@ -60,14 +60,18 @@
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
                                 <li><a href="blog.html"><span>Our Blog</span></a></li>
                                 <li><a href="contact.html"><span>Contact Us</span></a></li>
+                                @if(!session()->has('LoggedUser'))
                                 <li><a href="{{route('auth.login')}}"><span>Login or Register</span></a></li>
-
+                                @endif
+                                @if(session()->has('LoggedUser'))
+                                <li><a href="{{route('dashboard')}}"><span>Dashboard</span></a></li>
+                                @endif
                             </ul>
                         </div>
                         <div class="makeup_fl_booking_btn">
-                            <div class="btn_s_a"><a href="modal/address.html" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
-                            <div class="btn_b"><a href="modal/booking.html" class="ajax-popup-link">Book Online</a></div>
-                            <div class="btn_s_b"><a href="modal/opening.html" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+                            <div class="btn_b"><a href="{{route('booking')}}" class="ajax-popup-link">Book Online</a></div>
+                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
                         </div>
                         <div class="makeup_fl_social_icons">
                             <ul>
@@ -107,21 +111,21 @@
                             <span class="three"></span>
                         </div>
                         <div class="makeup_fl_booking_btn">
-                            <div class="btn_s_a"><a href="modal/address.html" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
-                            <div class="btn_b"><a href="modal/booking.html" class="ajax-popup-link">Book Online</a></div>
-                            <div class="btn_s_b"><a href="modal/opening.html" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+                            <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a></div>
+                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="makeup_fl_header_nav_list">
                             <ul>
                                 <li class="mversion">
                                     <div class="makeup_fl_booking_btn">
-                                        <div class="btn_s_a"><a href="modal/address.html" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
-                                        <div class="btn_b"><a href="modal/booking.html" class="ajax-popup-link">Book Online</a></div>
-                                        <div class="btn_s_b"><a href="modal/opening.html" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+                                        <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+                                        <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a></div>
+                                        <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
                                     </div>
                                 </li>
-                                <li><a href="index.html"><span>Homepage</span><br /><span class="row"></span></a></li>
+                                <li><a href="/"><span>Homepage</span><br /><span class="row"></span></a></li>
                                 <li><a href="about.html"><span>About Us</span></a></li>
                                 <li><a href="services.html"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
@@ -152,7 +156,7 @@
                         </div>
                         <div class="makeup_fl_totop_wrapper">
                             <div class="rotating"></div>
-                            <a href="#" class="totop"><i class="xcon-angle-up"></i></a>
+                            <a href="/" class="totop"><i class="xcon-angle-up"></i></a>
                         </div>
                     </div>
                     <!-- /FOOTER -->

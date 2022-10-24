@@ -49,5 +49,27 @@ class MainController extends Controller
             }
         }
     }
+    function logout(){
+        if(session()->has('LoggedUser')){
+            session()->pull('LoggedUser');
+            return redirect('auth/login');
+        }
+    }
+    function dashboard(){
+        $data = ['LoggedUserInfo'=>Admin::where('id', '=', session('LoggedUser'))->first()];
+        return view('admin.dashboard', $data);
+    }
+    function settings(){
+        $data = ['LoggedUserInfo'=>Admin::where('id', '=', session('LoggedUser'))->first()];
+        return view('admin.settings', $data);
+    }
+    function profile(){
+        $data = ['LoggedUserInfo'=>Admin::where('id', '=', session('LoggedUser'))->first()];
+        return view('admin.profile', $data);
+    }
+    function staff(){
+        $data = ['LoggedUserInfo'=>Admin::where('id', '=', session('LoggedUser'))->first()];
+        return view('admin.staff', $data);
+    }
 
 }
