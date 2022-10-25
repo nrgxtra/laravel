@@ -3,7 +3,7 @@
 	<div class="book_online">
 		<div class="makeup_fl_form">
 			<h3>Book Online</h3>
-			<form action="/" method="post" class="contact_form" id="contact_form">
+			<form action="{{route('make_booking')}}" method="post" class="contact_form" id="contact_form">
 
 				<div class="fl-col-6">
 					<div class="your-name">
@@ -43,7 +43,8 @@
 					<textarea id="message" placeholder="Message" cols="3" rows="5"></textarea>
 				</div>
 				<div class="button">
-				<input type="button" class="makeup_fl_btn makeup_fl_btn_bookingsend" value="Book Online" />
+                    <button type="submit">Book</button>
+{{--				<input type="submit" class="makeup_fl_btn makeup_fl_btn_bookingsend" value="Book Online" />--}}
 				</div>
 				<!-- RETURN MESSAGES -->
 				<div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>

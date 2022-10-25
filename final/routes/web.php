@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 
@@ -21,8 +22,9 @@ Route::post('auth/save', [MainController::class, 'save'])->name('auth.save');
 Route::get('auth/logout', [MainController::class, 'logout'])->name('auth.logout');
 Route::post('auth/check', [MainController::class, 'check'])->name('auth.check');
 
-Route::get('/booking', function (){return view('modal/booking');})->name('booking');
-Route::post('/booking/send', bookingsend.php;
+Route::get('/booking', [MailController::class, 'booking'])->name('booking');
+Route::post('/booking/make', [MailController::class, 'send'])->name('make_booking');
+
 
 Route::group(['middleware' => ['AuthCheck']], function () {
     Route::get('auth/login', [MainController::class, 'login'])->name('auth.login');
