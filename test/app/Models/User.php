@@ -61,18 +61,18 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $appends = [
         'profile_photo_url',
     ];
+
     /**
      * Send the queued email verification notification.
      *
-     * @param  string  $token
      * @return void
      */
     public function sendEmailVerificationNotification()
     {
-        $this->notify(new VerifyEmailQueued);
+        $this->notify(new VerifyEmailQueued());
     }
     /**
-    * Send the queued email verification notification.
+    * Send the queued email reset notification.
     *
     * @param  string  $token
     * @return void

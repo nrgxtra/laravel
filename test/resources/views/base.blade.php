@@ -1,8 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if lt IE 7 ]>
+<html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>
+<html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>
+<html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -20,7 +24,7 @@
     <!-- Styles -->
     @livewireStyles
 
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <meta name="description" content="name of web site">
     <meta name="author" content="FriendsLaboratory">
@@ -29,19 +33,20 @@
 
     <title>Homepage | Makeup</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i"
+          rel="stylesheet">
 
     <!-- STYLES -->
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}" />
-    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}"/>
+    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>
     <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->
     <!-- /STYLES -->
 
@@ -58,13 +63,12 @@
         <div class="container">
 
 
-
             <!-- VERTICAL MENU -->
             <div class="makeup_fl_ver_menu sticky_sidebar">
                 <div class="vertical_menu">
                     <div class="makeup_fl_ver_menu_in">
                         <div class="makeup_fl_logo">
-                            <img src="{{asset('storage/img/logo.png')}}" alt="" />
+                            <img src="{{asset('storage/img/logo.png')}}" alt=""/>
                         </div>
                         <div class="makeup_fl_nav_list">
                             <ul>
@@ -78,9 +82,11 @@
                             </ul>
                         </div>
                         <div class="makeup_fl_booking_btn">
-                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
+                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i
+                                        class="xcon-home"></i></a></div>
                             <div class="btn_b"><a href="#" class="ajax-popup-link">Book Online</a></div>
-                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i
+                                        class="xcon-clock-1"></i></a></div>
                         </div>
                         <div class="makeup_fl_social_icons">
                             <ul>
@@ -92,7 +98,7 @@
                             </ul>
                         </div>
                         <div class="makeup_fl_cright">
-                            <span>Copyright 2022. Built with love.<br />Powered by @Me</span>
+                            <span>Copyright 2022. Built with love.<br/>Powered by @Me</span>
                         </div>
                         <div class="makeup_fl_totop_wrapper">
                             <div class="rotating"></div>
@@ -111,7 +117,7 @@
                     <!-- HEADER -->
                     <div class="makeup_fl_header">
                         <div class="makeup_fl_logo">
-                            <img src="{{asset('storage/img/logo.png')}}" alt="" />
+                            <img src="{{asset('storage/img/logo.png')}}" alt=""/>
                         </div>
                         <div class="makeup_fl_header_trigger">
                             <a href="#"></a>
@@ -120,21 +126,28 @@
                             <span class="three"></span>
                         </div>
                         <div class="makeup_fl_booking_btn">
-                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
-                            <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a></div>
-                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i
+                                        class="xcon-home"></i></a></div>
+                            <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a>
+                            </div>
+                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i
+                                        class="xcon-clock-1"></i></a></div>
                         </div>
                         <div class="clearfix"></div>
                         <div class="makeup_fl_header_nav_list">
                             <ul>
                                 <li class="mversion">
                                     <div class="makeup_fl_booking_btn">
-                                        <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i class="xcon-home"></i></a></div>
-                                        <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a></div>
-                                        <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i class="xcon-clock-1"></i></a></div>
+                                        <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i
+                                                    class="xcon-home"></i></a></div>
+                                        <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book
+                                                Online</a></div>
+                                        <div class="btn_s_b"><a href="modal/opening.blade.php"
+                                                                class="ajax-popup-link"><i class="xcon-clock-1"></i></a>
+                                        </div>
                                     </div>
                                 </li>
-                                <li><a href="/"><span>Homepage</span><br /><span class="row"></span></a></li>
+                                <li><a href="/"><span>Homepage</span><br/><span class="row"></span></a></li>
                                 <li><a href="about.html"><span>About Us</span></a></li>
                                 <li><a href="services.html"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
@@ -144,11 +157,30 @@
                         </div>
                     </div>
                     <!-- /HEADER -->
+                    <div class="makeup_fl_content_wrap">
+                        <div class="row" style="text-align: end">
 
+                            @if (Route::has('login'))
+                                <div class=" sm:block">
+                                    @auth
+                                        <a href="{{ url('/dashboard') }}" class="rounded">Dashboard</a>
+                                    @else
+                                        <span class="container"><a href="{{ route('login') }}"
+                                                                   style="text-decoration-line: none">Log in</a></span>
 
-                    @yield('content')
+                                        @if (Route::has('register'))
+                                            <span class="container"><a href="{{ route('register') }}"
+                                                                       style="text-decoration-line: none">Register</a></span>
+                                        @endif
+                                    @endauth
+                                </div>
+                            @endif
+                        </div>
+                        <br>
 
+                        @yield('content')
 
+                    </div>
                     <!-- FOOTER -->
                     <div class="makeup_fl_footer">
                         <div class="social_icons">
@@ -180,7 +212,6 @@
 
 </div>
 <!-- /WRAPPER ALL -->
-
 
 
 <!-- SCRIPTS -->

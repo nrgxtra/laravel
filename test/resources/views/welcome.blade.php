@@ -1,27 +1,6 @@
 @extends('base')
 @section('content')
 
-    <!-- CONTENT WRAP -->
-    <div class="makeup_fl_content_wrap">
-        <div class="row" style="text-align: end">
-
-                @if (Route::has('login'))
-                    <div class=" sm:block">
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="rounded">Dashboard</a>
-                        @else
-                            <span class="container"><a href="{{ route('login') }}" style="text-decoration-line: none">Log in</a></span>
-
-                            @if (Route::has('register'))
-                                <span class="container"><a href="{{ route('register') }}" style="text-decoration-line: none">Register</a></span>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
-        </div>
-
-<br>
-
         <!-- FOTORAMA -->
         <div class="makeup_fl_fotorama">
             <div class="fotorama" data-nav="thumbs" data-autoplay="4000" data-loop="true" data-keyboard="true"
