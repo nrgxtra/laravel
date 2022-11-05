@@ -60,5 +60,9 @@ class PostController extends Controller
 
         return back()->with('success', 'Post Updated Successfully!');
     }
+    public function destroy(Post $post){
+        $post->delete();
+        return redirect('/blog')->with('success', 'You just deleted a Post!');
+    }
 }
 

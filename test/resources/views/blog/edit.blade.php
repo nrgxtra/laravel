@@ -60,7 +60,7 @@
 
         <div class="mb-6">
             <button class="float-right text-grey-100 rounded py-2 px-4 bg-violet-900 hover:bg-violet-500">
-                Post
+                UPDATE
             </button>
             <a href="/blog" class="xcon-angle-left text-grey"> Back </a>
         </div>

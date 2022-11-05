@@ -3,7 +3,7 @@
 
     <div class="clearfix"></div>
 <button class="xcon-angle-left"><a href="/blog">Back</a></button>
-<button class="xcon-pencil float-right"><a href="/blog/{{$post->id}}/edit">Edit</a></button>
+<button class="xcon-pencil float-right text-green-500" ><a href="/blog/{{$post->id}}/edit">Edit</a></button>
     <!-- CONTENT WRAP -->
     <div class="makeup_fl_content_wrap">
 
@@ -32,7 +32,11 @@
 
         </div>
 
-
+<form method="post" action="/blog/{{$post->id}}">
+    @csrf
+    @method('delete')
+    <button type="submit" class="text-red-500"><i class="xcon-trash"></i>Delete</button>
+</form>
 
     </div>
     <!-- /CONTENT WRAP -->
