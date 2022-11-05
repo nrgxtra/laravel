@@ -13,13 +13,15 @@
 
                 <div>
                     <x-jet-label for="name" value="{{ __('Name') }}"/>
-                    <x-jet-input id="name" class="block mt-1 w-full" style="color: white" type="text" name="name" :value="old('name')"
+                    <x-jet-input id="name" class="block mt-1 w-full" style="color: white" type="text" name="name"
+                                 :value="old('name')"
                                  required autofocus autocomplete="name"/>
                 </div>
 
                 <div class="mt-4">
                     <x-jet-label for="email" value="{{ __('Email') }}"/>
-                    <x-jet-input id="email" class="block mt-1 w-full" style="color: white" type="email" name="email" :value="old('email')"
+                    <x-jet-input id="email" class="block mt-1 w-full" style="color: white" type="email" name="email"
+                                 :value="old('email')"
                                  required/>
                 </div>
 

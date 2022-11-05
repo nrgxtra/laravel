@@ -7,7 +7,7 @@
 <html class="ie ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en"> <!--<![endif]-->
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,7 +76,7 @@
                                 <li><a href="about.html"><span>About Us</span></a></li>
                                 <li><a href="services.html"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
-                                <li><a href="blog.html"><span>Our Blog</span></a></li>
+                                <li><a href="/blog"><span>Our Blog</span></a></li>
                                 <li><a href="contact.html"><span>Contact Us</span></a></li>
 
                             </ul>
@@ -151,7 +151,7 @@
                                 <li><a href="about.html"><span>About Us</span></a></li>
                                 <li><a href="services.html"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
-                                <li><a href="blog.html"><span>Our Blog</span></a></li>
+                                <li><a href="/blog"><span>Our Blog</span></a></li>
                                 <li><a href="contact.html"><span>Contact Us</span></a></li>
                             </ul>
                         </div>
