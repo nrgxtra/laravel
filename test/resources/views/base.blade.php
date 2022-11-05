@@ -27,7 +27,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
     <meta name="description" content="name of web site">
-    <meta name="author" content="FriendsLaboratory">
+    <meta name="author" content="@me">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 

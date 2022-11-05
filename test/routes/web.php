@@ -20,10 +20,11 @@ Route::middleware([
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-Route::get('/blog/create', [PostController::class, 'create']);
-Route::post('/blog', [PostController::class, 'store']);
-Route::get('/blog/{post}/edit',[PostController::class, 'edit']);
-Route::put('/blog/{post}',[PostController::class, 'update']);
-Route::delete('/blog/{post}',[PostController::class, 'destroy']);
-
+Route::get('/blog/create', [PostController::class, 'create'])->middleware('auth');
+Route::post('/blog', [PostController::class, 'store'])->middleware('auth');
+Route::get('/blog/{post}/edit',[PostController::class, 'edit'])->middleware('auth');
+Route::put('/blog/{post}',[PostController::class, 'update'])->middleware('auth');
+Route::delete('/blog/{post}',[PostController::class, 'destroy'])->middleware('auth');
+Route::get('/blog/manage', [PostController::class, 'manage'])->middleware('auth');
 Route::get('/blog/{post}', [PostController::class, 'show']);
+

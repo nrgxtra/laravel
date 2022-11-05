@@ -34,6 +34,7 @@ class PostController extends Controller
         if ($request->hasFile('picture')) {
             $formFields['picture'] = $request->file('picture')->store('pictures', 'public');
         }
+        $formFields['user_id'] = auth()->id();
         Post::create($formFields);
         return redirect('/blog')->with('success', 'Post Created Successfully!');
     }
@@ -63,6 +64,9 @@ class PostController extends Controller
     public function destroy(Post $post){
         $post->delete();
         return redirect('/blog')->with('success', 'You just deleted a Post!');
+    }
+    public function manage(){
+        return view('blog.manage', ['posts'=> auth()->user()->posts()->get()]);
     }
 }
 
