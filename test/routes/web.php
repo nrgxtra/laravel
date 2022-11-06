@@ -1,13 +1,12 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'home']);
 
 Route::middleware([
     'auth:sanctum',
@@ -20,11 +19,11 @@ Route::middleware([
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-Route::get('/blog/create', [PostController::class, 'create'])->middleware('auth');
-Route::post('/blog', [PostController::class, 'store'])->middleware('auth');
-Route::get('/blog/{post}/edit',[PostController::class, 'edit'])->middleware('auth');
-Route::put('/blog/{post}',[PostController::class, 'update'])->middleware('auth');
-Route::delete('/blog/{post}',[PostController::class, 'destroy'])->middleware('auth');
-Route::get('/blog/manage', [PostController::class, 'manage'])->middleware('auth');
+Route::get('/blog/create', [PostController::class, 'create'])->middleware('role:writer|admin');
+Route::post('/blog', [PostController::class, 'store'])->middleware('role:writer|admin');
+Route::get('/blog/{post}/edit',[PostController::class, 'edit'])->middleware('role:writer|admin');
+Route::put('/blog/{post}',[PostController::class, 'update'])->middleware('role:writer|admin');
+Route::delete('/blog/{post}',[PostController::class, 'destroy'])->middleware('role:writer|admin');
+Route::get('/blog/manage', [PostController::class, 'manage'])->middleware('role:writer|admin');
 Route::get('/blog/{post}', [PostController::class, 'show']);
 

@@ -4,9 +4,10 @@
     <!-- COMMON -->
     <div class="makeup_fl_common">
         <x-flash-success />
+        @role('writer|admin')
         <button class="xcon-pencil"><a href="/blog/create">Write Post</a></button>
         <button class="xcon-gauge text-green-500 float-right" ><a href="/blog/manage">Manage Posts</a></button>
-
+        @endrole
         @include('partials._search')
         @unless(count($posts)==0)
             @foreach($posts as $post)

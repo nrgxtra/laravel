@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
     public function index()
     {
-        return view('blog.index', ['posts' => Post::latest()->filter(request(['tag', 'search']))->paginate(2)]);
+        return view('blog.index', ['posts' => Post::latest()->with('author')->filter(request(['tag', 'search', 'author']))->paginate(2)]);
     }
 
     public function show(Post $post)
@@ -66,7 +67,11 @@ class PostController extends Controller
         return redirect('/blog')->with('success', 'You just deleted a Post!');
     }
     public function manage(){
-        return view('blog.manage', ['posts'=> auth()->user()->posts()->get()]);
+        if (auth()->user()->hasRole('admin')){
+            return view('blog.manage',['posts'=>Post::all()]);
+        }else{
+            return view('blog.manage', ['posts'=> auth()->user()->posts()->get()]);
+        }
     }
 }
 

@@ -49,7 +49,8 @@
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>
     <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->
     <!-- /STYLES -->
-
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{asset('storage/img/logo.png')}}">
 </head>
 
 <body>
@@ -57,7 +58,7 @@
 
 <!-- WRAPPER ALL -->
 <div class="makeup_fl_wrapper_all">
-
+    <x-flash-success />
     <!-- CONTENT -->
     <div class="makeup_fl_content">
         <div class="container">
