@@ -14,6 +14,10 @@
             <div class="mfp-inline-holder flex">
             <x-post-tags :tagsCsv="$post->tags"/>
             </div>
+            <div class="float-right">
+                <span>{{$post->likes()->count()}}</span>
+                <i class="xcon-heart"></i>
+            </div>
         </div>
         <div class="common_info">
             <p>{{$post->description}}</p>

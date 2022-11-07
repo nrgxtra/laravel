@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -71,6 +72,19 @@ class PostController extends Controller
             return view('blog.manage',['posts'=>Post::all()]);
         }else{
             return view('blog.manage', ['posts'=> auth()->user()->posts()->get()]);
+        }
+    }
+    public function like(Request $request, $id){
+        $user_id = $request->user()->id;
+        $post = Post::find($id);
+        $alreadyLiked = $post->likes()->where('user_id', $user_id)->first();
+        if($alreadyLiked){
+            $alreadyLiked->delete();
+            return back()->with('success', 'Disliked!');
+        }else{
+            $like = new Like(['post_id'=>$id, 'user_id'=>$user_id]);
+            $like->save();
+            return back()->with('success', 'Liked!');
         }
     }
 }

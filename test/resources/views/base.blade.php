@@ -51,6 +51,11 @@
     <!-- /STYLES -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{asset('storage/img/logo.png')}}">
+    <style>
+        .xcon-heart {
+            color: mediumpurple;
+        }
+    </style>
 </head>
 
 <body>
@@ -58,7 +63,7 @@
 
 <!-- WRAPPER ALL -->
 <div class="makeup_fl_wrapper_all">
-    <x-flash-success />
+    <x-flash-success/>
     <!-- CONTENT -->
     <div class="makeup_fl_content">
         <div class="container">

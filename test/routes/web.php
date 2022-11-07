@@ -25,5 +25,6 @@ Route::get('/blog/{post}/edit',[PostController::class, 'edit'])->middleware('rol
 Route::put('/blog/{post}',[PostController::class, 'update'])->middleware('role:writer|admin');
 Route::delete('/blog/{post}',[PostController::class, 'destroy'])->middleware('role:writer|admin');
 Route::get('/blog/manage', [PostController::class, 'manage'])->middleware('role:writer|admin');
+Route::post('blog/like/{id}', [PostController::class, 'like'])->middleware('auth');
 Route::get('/blog/{post}', [PostController::class, 'show']);
 
