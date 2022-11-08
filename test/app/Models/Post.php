@@ -16,6 +16,9 @@ class Post extends Model
     public function likes(){
         return $this->hasMany(Like::class, 'post_id');
     }
+    public function comments(){
+        return $this->hasMany(PostComment::class, 'post_id');
+    }
 
     public function scopeFilter($query, array $filters)
     {

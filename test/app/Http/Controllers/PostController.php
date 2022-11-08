@@ -16,8 +16,9 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
+        $comments = $post->comments()->get();
         return view('blog.show',
-            ['post' => $post]);
+            ['post' => $post, 'comments' => $comments]);
     }
 
     public function create()

@@ -41,52 +41,22 @@
                 </div>
                 <!--  COMMENT- SECTION -->
                 <div>
-                    <form method="post" action="/blog/comment/create/{{$post->id}}">
+                    <form method="post" action="/blog/comment/{{$comment->id}}">
                         @csrf
+                        @method('put')
                         <label for="content" class="inline-block text-lg mb-2">
-                            Comment
+                            Edit Comment
                         </label>
-                        <textarea class="bg-transparent border border-gray-200 rounded p-2 w-full" name="content"
+                        <textarea class="bg-transparent border border-gray-100 rounded p-2 w-full text-grey-100" name="content"
                                   rows="5"
-                                  placeholder="Your opinion here ...">{{old('content')}}</textarea>
+                                  >{{$comment->content}}</textarea>
                         @error('content')
                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                         @enderror
-                        <button type="submit" class="float-right">Submit Comment</button>
+                        <button type="submit" class="float-right">Edit Comment</button>
                     </form>
-                    <div class="mt-6 bg-transparent shadow-sm rounded-lg divide-y">
-                        @foreach($comments as $comment)
-                        @php
-                            $user = \App\Models\User::find($comment->user_id)
-                        @endphp
-                            <div class="p-6 flex space-x-2 bg-transparent">
-                                <div class="flex-1 bg-transparent">
-                                    <div class="flex justify-between items-center bg-transparent " >
-                                        <div>
-                                            <span class="text-grey-100">{{ $user->name }}</span>
-                                            <small class="ml-2 text-sm text-gray-400">{{ $comment->created_at->format('j M Y, g:i a') }}</small>
-                                        </div>
-                                        @if(auth()->user()->id == $user->id)
-                                            <a href="/blog/comment/{{$comment->id}}/edit"><i class="xcon-pencil text-green-500"></i>Edit</a>
-                                            <form method="post" action="/blog/comment/delete/{{$comment->id}}">
-                                                @csrf
-                                                @method('delete')
-                                                <button type="submit"><i class="xcon-trash text-red-500"></i>Delete</button>
-                                            </form>
-                                        @endif
-                                    </div>
-                                    <p class="mt-4 text-lg text-gray-400">{{ $comment->content }}</p>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-    <!-- /CONTENT WRAP -->
-
 @endsection
