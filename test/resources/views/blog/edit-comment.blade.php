@@ -8,7 +8,6 @@
     <div class="makeup_fl_content_wrap">
 
         <div class="makeup_fl_common">
-            <x-flash-success/>
             <div class="makeup_fl_blog_list">
                 <div class="common_img">
                     <img

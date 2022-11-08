@@ -8,7 +8,6 @@
     <div class="makeup_fl_content_wrap">
 
         <div class="makeup_fl_common">
-            <x-flash-success/>
             <div class="makeup_fl_blog_list">
                 <div class="common_img">
                     <img
@@ -22,7 +21,7 @@
                     <div class="title_holder">
                         <h3><a href="/blog/{{$post->id}}">{{$post->title}}</a></h3>
                         <h5>in {{$post->category}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            at {{$post->created_at->format('d-m-y')}}</h5>
+                            at {{$post->created_at->format('d-m-y')}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="/blog?author={{$post->author->id}}">by {{$post->author->name}}</a></h5>
                         <div class="mfp-inline-holder flex">
                             <x-post-tags :tagsCsv="$post->tags"/>
                         </div>

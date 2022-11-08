@@ -14,7 +14,7 @@ class CommentController extends Controller
         $post = Post::find($id);
         $alreadyCommented = $post->comments()->where('user_id', $user_id)->first();
         if ($alreadyCommented) {
-            return back()->with('success', 'You already commented!');
+            return back()->with('fail', 'You already commented!');
         } else {
             $formFields = $request->validate([
                 'content' => 'string',

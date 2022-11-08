@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Newsletter;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
@@ -48,5 +49,19 @@ class HomeController extends Controller
 //        $user1=User::find(3);
 //        $user1->assignRole(1);
         return view('home');
+    }
+    public function subscribe(Request $request){
+        $request->validate([
+           'sub_email' => 'required|email',
+        ]);
+        $mail = $request->sub_email;
+        $already_subscribed = Newsletter::hasMember($mail);
+        if($already_subscribed){
+            return back()->with('fail', 'You are already subscribed');
+        }else{
+            Newsletter::subscribe($request->sub_email);
+            return back()->with('success', 'Thank You for subscribing');
+        }
+
     }
 }

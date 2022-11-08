@@ -81,7 +81,7 @@ class PostController extends Controller
         $alreadyLiked = $post->likes()->where('user_id', $user_id)->first();
         if($alreadyLiked){
             $alreadyLiked->delete();
-            return back()->with('success', 'Disliked!');
+            return back()->with('fail', 'Disliked!');
         }else{
             $like = new Like(['post_id'=>$id, 'user_id'=>$user_id]);
             $like->save();

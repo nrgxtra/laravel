@@ -63,11 +63,10 @@
 
 <!-- WRAPPER ALL -->
 <div class="makeup_fl_wrapper_all">
-    <x-flash-success/>
+
     <!-- CONTENT -->
     <div class="makeup_fl_content">
         <div class="container">
-
 
             <!-- VERTICAL MENU -->
             <div class="makeup_fl_ver_menu sticky_sidebar">
@@ -84,16 +83,30 @@
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
                                 <li><a href="contact.html"><span>Contact Us</span></a></li>
-
                             </ul>
+
                         </div>
-                        <div class="makeup_fl_booking_btn">
-                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i
-                                        class="xcon-home"></i></a></div>
-                            <div class="btn_b"><a href="#" class="ajax-popup-link">Book Online</a></div>
-                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i
-                                        class="xcon-clock-1"></i></a></div>
-                        </div>
+
+                        <br>
+                            <div class="text-center">
+                                <h3>Our Newsletter</h3>
+
+                                <form method="post" action="{{route('subscribe')}}">
+                                    @csrf
+                                    <input type="text" class="bg-transparent border border-gray-200 rounded  "
+                                           name="sub_email"
+                                           placeholder="myemail@example.com" value="{{old('sub_email')}}"/>
+                                    @error('sub_email')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                    @enderror
+                                    <button
+                                        class="text-center text-grey-100 rounded mt-4 py-1 px-3 bg-violet-900 hover:bg-violet-500">
+                                        Subscribe
+                                    </button>
+                                </form>
+                            </div>
+                        <br>
+
                         <div class="makeup_fl_social_icons">
                             <ul>
                                 <li><a href="#"><i class="xcon-facebook"></i></a></li>
@@ -165,7 +178,8 @@
                     <!-- /HEADER -->
                     <div class="makeup_fl_content_wrap">
                         <div class="row" style="text-align: end">
-
+                            <x-flash-success/>
+                            <x-flash-fail/>
                             @if (Route::has('login'))
                                 <div class=" sm:block">
                                     @auth
