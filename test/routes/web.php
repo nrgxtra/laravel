@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'home']);
+Route::get('/admin', [HomeController::class, 'admin']);
 Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('subscribe');
 Route::middleware([
     'auth:sanctum',
@@ -20,12 +21,12 @@ Route::middleware([
 });
 
 Route::get('/blog', [PostController::class, 'index']);
-Route::get('/blog/create', [PostController::class, 'create'])->middleware('role:writer|admin');
-Route::post('/blog', [PostController::class, 'store'])->middleware('role:writer|admin');
-Route::get('/blog/{post}/edit',[PostController::class, 'edit'])->middleware('role:writer|admin');
-Route::put('/blog/{post}',[PostController::class, 'update'])->middleware('role:writer|admin');
-Route::delete('/blog/{post}',[PostController::class, 'destroy'])->middleware('role:writer|admin');
-Route::get('/blog/manage', [PostController::class, 'manage'])->middleware('role:writer|admin');
+Route::get('/blog/create', [PostController::class, 'create'])->middleware('role:writer|admin|Super Admin');
+Route::post('/blog', [PostController::class, 'store'])->middleware('role:writer|admin|Super Admin');
+Route::get('/blog/{post}/edit',[PostController::class, 'edit'])->middleware('role:writer|admin|Super Admin');
+Route::put('/blog/{post}',[PostController::class, 'update'])->middleware('role:writer|admin|Super Admin');
+Route::delete('/blog/{post}',[PostController::class, 'destroy'])->middleware('role:writer|admin|Super Admin');
+Route::get('/blog/manage', [PostController::class, 'manage'])->middleware('role:writer||Super Admin');
 Route::get('/blog/{post}', [PostController::class, 'show'])->name('show');
 Route::post('blog/like/{id}', [PostController::class, 'like'])->middleware('auth');
 Route::post('blog/comment/create/{id}', [CommentController::class, 'addComment'])->middleware('auth');

@@ -9,12 +9,25 @@ module.exports = {
         './resources/views/**/*.blade.php',
     ],
 
+
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
         },
+    },
+    colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'white': '#ffffff',
+        'purple': '#371352',
+        'midnight': '#121063',
+        'metal': '#565584',
+        'tahiti': '#3ab7bf',
+        'silver': '#ecebff',
+        'bubble-gum': '#ff77e9',
+        'bermuda': '#78dcca',
     },
 
     plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],

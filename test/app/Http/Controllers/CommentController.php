@@ -17,7 +17,7 @@ class CommentController extends Controller
             return back()->with('fail', 'You already commented!');
         } else {
             $formFields = $request->validate([
-                'content' => 'string',
+                'content' => 'string|max:255',
             ]);
             $formFields['post_id'] = $id;
             $formFields['user_id'] = $user_id;
@@ -28,7 +28,7 @@ class CommentController extends Controller
 
     public function editComment($id)
     {
-        $comment = PostComment::find($id)->first();
+        $comment = PostComment::find($id);
         $post = Post::find($comment->post_id);
         return view('blog.edit-comment', ['comment' => $comment, 'post' => $post]);
     }
@@ -36,7 +36,7 @@ class CommentController extends Controller
     public function updateComment(Request $request, $id)
     {
 
-        $comment = PostComment::find($id)->first();
+        $comment = PostComment::find($id);
         $post = Post::find($comment->post_id);
         $formFields = $request->validate([
             'content' => 'string',

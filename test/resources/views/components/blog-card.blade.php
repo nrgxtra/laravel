@@ -9,7 +9,7 @@
     <div class="common_full_info">
         <div class="title_holder">
             <h3><a href="/blog/{{$post->id}}">{{$post->title}}</a></h3>
-            <h5>in {{$post->category}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at {{$post->created_at->format('d-m-y')}}</h5>
+            <h5>in {{$post->category}}   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  at {{$post->updated_at->format('d-m-y')}}</h5>
             <a href="/blog?author={{$post->author->id}}">by {{$post->author->name}}</a>
             <div class="mfp-inline-holder flex">
             <x-post-tags :tagsCsv="$post->tags"/>

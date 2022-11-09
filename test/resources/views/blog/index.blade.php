@@ -7,8 +7,10 @@
         <button class="xcon-pencil"><a href="/blog/create">Write Post</a></button>
         <button class="xcon-gauge text-green-500 float-right" ><a href="/blog/manage">Manage Posts</a></button>
         @endrole
-
+        <div>
         @include('partials._search')
+        </div>
+        <br>
         @unless(count($posts)==0)
             @foreach($posts as $post)
         <!-- BLOG #1 -->
