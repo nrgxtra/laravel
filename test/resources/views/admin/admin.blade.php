@@ -37,17 +37,17 @@
           rel="stylesheet">
 
     <!-- STYLES -->
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}"/>--}}
-{{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>--}}
-{{--    <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}"/>--}}
+    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>--}}
+    {{--    <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->--}}
     <!-- /STYLES -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{asset('storage/img/logo.png')}}">
@@ -65,9 +65,16 @@
 
 <body>
 <div class="container-scroller">
-<h1>A D M I N</h1>
+    @include('admin.navbar')
+    <div class="container-fluid page-body-wrapper">
+        @include('admin.sidebar')
+        <div class="main-panel">
+            <div class="content-wrapper">
+                @yield('admin')
+            </div>
+        </div>
+    </div>
 </div>
-
 
 
 <!-- plugins:js -->

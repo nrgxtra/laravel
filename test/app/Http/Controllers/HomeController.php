@@ -88,7 +88,4 @@ class HomeController extends Controller
             return back()->with('success', 'Thank You for subscribing');
         }
     }
-    public function admin(){
-        return view('admin.admin');
-    }
 }

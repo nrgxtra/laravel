@@ -2,7 +2,6 @@
 @section('content')
 
     <div class="clearfix"></div>
-    <button class="xcon-angle-left"><a href="/blog">Back</a></button>
 
     <!-- CONTENT WRAP -->
     <div class="makeup_fl_content_wrap">
@@ -38,6 +37,7 @@
                         <p>{{$post->description}}</p>
                     </div>
                 </div>
+                <button class="xcon-angle-double-left"><a href="/blog">Back</a></button>
                 <!--  COMMENT- SECTION -->
                 <div>
                     <form method="post" action="/blog/comment/create/{{$post->id}}">

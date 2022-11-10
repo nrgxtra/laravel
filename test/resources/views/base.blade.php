@@ -88,23 +88,23 @@
                         </div>
 
                         <br>
-                            <div class="text-center">
-                                <h3>Our Newsletter</h3>
+                        <div class="text-center">
+                            <h3>Our Newsletter</h3>
 
-                                <form method="post" action="{{route('subscribe')}}">
-                                    @csrf
-                                    <input type="text" class="bg-transparent border border-gray-200 rounded  "
-                                           name="sub_email"
-                                           placeholder="myemail@example.com" value="{{old('sub_email')}}"/>
-                                    @error('sub_email')
-                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                                    @enderror
-                                    <button
-                                        class="text-center text-grey-100 rounded mt-4 py-1 px-3 bg-violet-900 hover:bg-violet-500">
-                                        Subscribe
-                                    </button>
-                                </form>
-                            </div>
+                            <form method="post" action="{{route('subscribe')}}">
+                                @csrf
+                                <input type="text" class="bg-transparent border border-gray-200 rounded  "
+                                       name="sub_email"
+                                       placeholder="myemail@example.com" value="{{old('sub_email')}}"/>
+                                @error('sub_email')
+                                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                                <button
+                                    class="text-center text-grey-100 rounded mt-4 py-1 px-3 bg-violet-900 hover:bg-violet-500">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
                         <br>
 
                         <div class="makeup_fl_social_icons">
@@ -180,6 +180,12 @@
                         <div class="row" style="text-align: end">
                             <x-flash-success/>
                             <x-flash-fail/>
+                            @if(Auth::check() && request()->user()->hasRole('Super Admin'))
+                                <div class="float-left">
+                                    <a href="{{ route('admin') }}"><i class="xcon-at text-green-500"></i>ADMINISTRATION</a>
+                                </div>
+                            @endif
+
                             @if (Route::has('login'))
                                 <div class=" sm:block">
                                     @auth

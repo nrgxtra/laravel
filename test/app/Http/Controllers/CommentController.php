@@ -47,7 +47,7 @@ class CommentController extends Controller
 
     public function deleteComment($id)
     {
-        $comment = PostComment::find($id)->first();
+        $comment = PostComment::find($id);
         $comment->delete();
         return back()->with('success', 'Comment deleted');
     }
