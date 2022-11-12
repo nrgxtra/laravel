@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-
 
 Route::get('/', [HomeController::class, 'home']);
 Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('subscribe');
@@ -21,6 +21,21 @@ Route::middleware([
 });
 Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin');
+    Route::get('/role', [AdminController::class, 'giveRole'])->name('give_role');
+    Route::post('/role/set', [AdminController::class, 'setRole'])->name('set_role');
+    Route::post('/role/remove', [AdminController::class, 'deleteRole'])->name('remove_role');
+
+    Route::controller(App\Http\Controllers\admin\CategoryController::class)->group(function () {
+        Route::get('/category', 'index');
+        Route::get('/category/create', 'create');
+        Route::post('/category', 'store');
+        Route::get('/category/{category}/edit', 'edit');
+        Route::put('/category/{category}', 'save');
+        Route::post('/category/{category}', 'destroy');
+    });
+
+
+
 });
 Route::prefix('blog')->group(function (){
     Route::get('/', [PostController::class, 'index']);

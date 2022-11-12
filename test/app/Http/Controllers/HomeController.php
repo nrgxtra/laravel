@@ -69,8 +69,8 @@ class HomeController extends Controller
         $role4->givePermissionTo($permission9);
         $role4->givePermissionTo($permission10);
         $role4->givePermissionTo($permission11);
-//        $user4=User::find(4);
-//        $user4->assignRole(4);
+        $user1=User::find(1);
+        $user1->assignRole(4);
         return view('home');
     }
 

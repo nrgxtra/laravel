@@ -37,17 +37,17 @@
           rel="stylesheet">
 
     <!-- STYLES -->
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}"/>--}}
-    {{--    <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>--}}
-    {{--    <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->--}}
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fotorama.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/owl.carousel.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/animate.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/magnific-popup.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}"/>
+        <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>
+        <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->
     <!-- /STYLES -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{asset('storage/img/logo.png')}}">
@@ -64,9 +64,11 @@
 </head>
 
 <body>
+
 <div class="container-scroller">
     @include('admin.navbar')
     <div class="container-fluid page-body-wrapper">
+
         @include('admin.sidebar')
         <div class="main-panel">
             <div class="content-wrapper">
@@ -76,34 +78,26 @@
     </div>
 </div>
 
-
-<!-- plugins:js -->
-<script src="{{asset('storage/admin/vendors/base/vendor.bundle.base.js')}}"></script>
+<script src="{{asset('storage/vendors/base/vendor.bundle.base.js')}}"></script>
 <!-- endinject -->
 <!-- Plugin js for this page-->
-<script src="{{asset('storage/admin/vendors/chart.js/Chart.min.js')}}"></script>
-<script src="{{asset('storage/admin/vendors/datatables.net/jquery.dataTables.js')}}"></script>
-<script src="{{asset('storage/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('vendors/chart.js/Chart.min.js')}}"></script>
+<script src="{{asset('vendors/datatables.net/jquery.dataTables.js')}}"></script>
+<script src="{{asset('vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
 <!-- End plugin js for this page-->
 <!-- inject:js -->
-<script src="{{asset('storage/admin/js/off-canvas.js')}}"></script>
-<script src="{{asset('storage/admin/js/hoverable-collapse.js')}}"></script>
-<script src="{{asset('storage/admin/js/template.js')}}"></script>
+<script src="{{asset('js/off-canvas.js')}}"></script>
+<script src="{{asset('js/hoverable-collapse.js')}}"></script>
+<script src="{{asset('js/template.js')}}"></script>
 <!-- endinject -->
 <!-- Custom js for this page-->
-<script src="{{asset('storage/admin/js/dashboard.js')}}"></script>
-<script src="{{asset('storage/admin/js/data-table.js')}}"></script>
-<script src="{{asset('storage/admin/js/jquery.dataTables.js')}}"></script>
-<script src="{{asset('storage/admin/js/dataTables.bootstrap4.js')}}"></script>
+<script src="{{asset('js/dashboard.js')}}"></script>
+<script src="{{asset('js/data-table.js')}}"></script>
+<script src="{{asset('js/jquery.dataTables.js')}}"></script>
+<script src="{{asset('js/dataTables.bootstrap4.js')}}"></script>
 <!-- End custom js for this page-->
 
-<script src="{{asset('storage/admin/js/jquery.cookie.js')}}" type="text/javascript"></script>
-<script type="text/javascript" src="{{asset('storage/js/jquery.js')}}"></script>
-<script type="text/javascript" src="{{asset('storage/js/carousel.js')}}"></script>
-<script type="text/javascript" src="{{asset('storage/js/plugins.js')}}"></script>
-<!--[if lt IE 10]> <script type="text/javascript" src="{{asset('storage/js/ie8.js')}}"></script> <![endif]-->
-<script type="text/javascript" src="{{asset('storage/js/init.js')}}"></script>
-<!-- /SCRIPTS -->
+<script src="{{asset('js/jquery.cookie.js')}}" type="text/javascript"></script>
 
 </body>
 </html>
