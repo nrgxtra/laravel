@@ -19,9 +19,9 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="/admin/service">
                 <i class="mdi mdi-chart-pie menu-icon"></i>
-                <span class="menu-title">Products</span>
+                <span class="menu-title">Services</span>
             </a>
         </li>
     </ul>

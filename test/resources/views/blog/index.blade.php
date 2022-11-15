@@ -31,9 +31,6 @@
             <div class="pg_number">
                     {{$posts->links()}}
             </div>
-            <div class="pages">
-                <span>Viewing page 1 of 2</span>
-            </div>
         </div>
     </div>
     <!-- /PAGINATION -->

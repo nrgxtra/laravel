@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
 class AdminController extends Controller
@@ -15,9 +16,9 @@ class AdminController extends Controller
         return view('admin.dashboard',['users'=>$users, 'roles'=>$roles]);
     }
     public function giveRole(){
-        $users = User::all();
+        $users = User::paginate(6);
         $roles = Role::all();
-        return view('admin.role', ['users'=>$users, 'roles'=>$roles]);
+        return view('admin.roles.role', ['users' => $users, 'roles'=>$roles]);
     }
     public function setRole(Request $request){
         $user1=User::find($request->user_id);

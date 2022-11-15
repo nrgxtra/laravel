@@ -10,11 +10,11 @@ class CategoryController extends Controller
 {
     public function index(){
         $categories = Category::all();
-        return view('admin.category',['categories'=>$categories]);
+        return view('admin.category.category', ['categories'=>$categories]);
     }
     public function create(){
 
-        return view('admin.cat-create');
+        return view('admin.category.cat-create');
     }
     public function store(Request $request){
         $formFields = $request->validate([
@@ -30,7 +30,7 @@ class CategoryController extends Controller
         }
     }
     public function edit(Category $category){
-        return view('admin.cat-edit', ['category'=>$category]);
+        return view('admin.category.cat-edit', ['category'=>$category]);
     }
     public function save(Request $request, $id){
         $category = Category::find($id);

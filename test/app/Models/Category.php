@@ -14,4 +14,7 @@ class Category extends Model
         'name',
         'slug',
     ];
+    public function services(){
+        return $this->hasMany(Service::class, 'category_id');
+    }
 }

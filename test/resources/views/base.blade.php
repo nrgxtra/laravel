@@ -79,7 +79,7 @@
                             <ul>
                                 <li><a href="/"><span>Homepage</span></a></li>
                                 <li><a href="about.html"><span>About Us</span></a></li>
-                                <li><a href="services.html"><span>Services</span></a></li>
+                                <li><a href="/services"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
                                 <li><a href="contact.html"><span>Contact Us</span></a></li>

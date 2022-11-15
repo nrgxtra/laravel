@@ -5,6 +5,7 @@ use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ServicesController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
@@ -34,7 +35,15 @@ Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
         Route::post('/category/{category}', 'destroy');
     });
 
-
+    Route::controller(App\Http\Controllers\admin\ServiceController::class)->group(function () {
+        Route::get('/service', 'index');
+        Route::get('/service/create', 'create');
+        Route::post('/service', 'store');
+        Route::get('/service/{service}/edit', 'edit');
+        Route::put('/service/{service}', 'save');
+        Route::post('/service/{service}', 'destroy');
+        Route::post('/service/{id}/pic', 'del');
+    });
 
 });
 Route::prefix('blog')->group(function (){
@@ -54,4 +63,7 @@ Route::prefix('blog')->group(function (){
 });
 
 
-
+Route::prefix('services')->group(function (){
+    Route::get('/', [ServicesController::class, 'index']);
+    Route::get('/{id}', [ServicesController::class, 'show']);
+});

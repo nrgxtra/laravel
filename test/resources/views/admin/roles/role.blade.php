@@ -20,7 +20,7 @@
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>
-                        {{$user->getRoleNames()}}
+                       {{$user->getRoleNames()}}
                     </td>
                 </tr>
             @endforeach
@@ -99,6 +99,13 @@
                     </button>
                 </div>
             </form>
+        </div>
+        <div class="makeup_fl_pagination">
+            <div class="makeup_fl_pagination_in">
+                <div class="pg_number">
+                    {{$users->links()}}
+                </div>
+            </div>
         </div>
     </div>
 @endsection
