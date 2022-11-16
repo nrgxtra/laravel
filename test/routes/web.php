@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
@@ -66,4 +67,9 @@ Route::prefix('blog')->group(function (){
 Route::prefix('services')->group(function (){
     Route::get('/', [ServicesController::class, 'index']);
     Route::get('/{id}', [ServicesController::class, 'show']);
+});
+
+Route::prefix('booking')->group(function (){
+    Route::get('/', [ContactController::class, 'index']);
+    Route::post('/', [ContactController::class, 'contact']);
 });

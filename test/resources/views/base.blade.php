@@ -82,7 +82,7 @@
                                 <li><a href="/services"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
-                                <li><a href="contact.html"><span>Contact Us</span></a></li>
+                                <li><a href="/booking"><span>Contact Us</span></a></li>
                             </ul>
 
                         </div>
@@ -100,7 +100,7 @@
                                 <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                 @enderror
                                 <button
-                                    class="text-center text-grey-100 rounded mt-4 py-1 px-3 bg-violet-900 hover:bg-violet-500">
+                                    class="text-center text-grey-100 rounded mt-4 py-1 px-3 hover:bg-violet-500" style="background: #371352">
                                     Subscribe
                                 </button>
                             </form>
@@ -171,7 +171,7 @@
                                 <li><a href="services.html"><span>Services</span></a></li>
                                 <li><a href="gallery.html"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
-                                <li><a href="contact.html"><span>Contact Us</span></a></li>
+                                <li><a href="/booking"><span>Contact Us</span></a></li>
                             </ul>
                         </div>
                     </div>

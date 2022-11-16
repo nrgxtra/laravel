@@ -23,17 +23,26 @@
                 <div class="service makeup_fl_masonry_in">
                     <div class="srv_img">
                         @if($image)
-                        <img src="/service_images/{{$image->image}}" alt="">
+                            <img src="/service_images/{{$image->image}}" alt="">
+                            <a href="/services/{{$service->id}}">
+                                <div class="overlay"></div>
+                            </a>
                         @else
                             <img src="{{asset('/storage/img/services/empty-product.png')}}" alt="">
-                        <a href="/services/{{$service->id}}">
-                            <div class="overlay"></div>
-                        </a>
+                            <a href="/services/{{$service->id}}">
+                                <div class="overlay"></div>
+                            </a>
                         @endif
-                        <div class="price"><span>${{$service->original_price}}</span></div>
+                        @if($service->discount_price)
+                            <div class="discount">
+                                <span>${{$service->original_price}}</span></div>
+                            <div class="newprice"><span>${{$service->discount_price}}</span></div>
+                        @else
+                            <div class="price"><span>${{$service->original_price}}</span></div>
+                        @endif
                     </div>
                     <div class="title_holder">
-                        <h3><a href="/service/{{$service->id}}">{{$service->name}}</a></h3>
+                        <h3><a href="/services/{{$service->id}}">{{$service->name}}</a></h3>
                         <span>Time Duration : {{$service->duration}} min</span>
                     </div>
                 </div>
