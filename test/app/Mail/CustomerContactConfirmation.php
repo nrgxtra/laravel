@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -14,13 +15,20 @@ class CustomerContactConfirmation extends Mailable
     use Queueable, SerializesModels;
 
     /**
-     * Create a new message instance.
+     * The mail instance.
      *
+     * @var \App\Models\Contact
+     */
+    public Contact $contact;
+
+    /**
+     * Create a new message instance.
+     * @param  \App\Models\Contact  $contact
      * @return void
      */
-    public function __construct()
+    public function __construct(Contact $contact)
     {
-        //
+        $this->contact = $contact;
     }
 
     /**
@@ -31,7 +39,8 @@ class CustomerContactConfirmation extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Customer Contact Confirmation',
+
+            subject: 'Customer Contact',
         );
     }
 
@@ -43,7 +52,7 @@ class CustomerContactConfirmation extends Mailable
     public function content()
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.contact_confirm',
         );
     }
 

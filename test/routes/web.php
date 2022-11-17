@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\CategoryController;
+use App\Http\Controllers\CommonController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
@@ -36,6 +37,15 @@ Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
         Route::post('/category/{category}', 'destroy');
     });
 
+    Route::controller(App\Http\Controllers\admin\TeamController::class)->group(function () {
+        Route::get('/team', 'index');
+        Route::get('/team/create', 'create');
+        Route::post('/team', 'store');
+        Route::get('/team/{member}/edit', 'edit');
+        Route::put('/team/{member}', 'save');
+        Route::post('/team/{member}', 'destroy');
+    });
+
     Route::controller(App\Http\Controllers\admin\ServiceController::class)->group(function () {
         Route::get('/service', 'index');
         Route::get('/service/create', 'create');
@@ -44,6 +54,15 @@ Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
         Route::put('/service/{service}', 'save');
         Route::post('/service/{service}', 'destroy');
         Route::post('/service/{id}/pic', 'del');
+    });
+
+    Route::controller(App\Http\Controllers\admin\GalleryController::class)->group(function () {
+        Route::get('/gallery', 'index');
+        Route::get('/gallery/create', 'create');
+        Route::post('/gallery', 'store');
+        Route::get('/gallery/{gallery}/edit', 'edit');
+        Route::put('/gallery/{gallery}', 'save');
+        Route::post('/gallery/{gallery}', 'destroy');
     });
 
 });
@@ -67,9 +86,17 @@ Route::prefix('blog')->group(function (){
 Route::prefix('services')->group(function (){
     Route::get('/', [ServicesController::class, 'index']);
     Route::get('/{id}', [ServicesController::class, 'show']);
+    Route::post('/', [ServicesController::class, 'show']);
 });
 
 Route::prefix('booking')->group(function (){
     Route::get('/', [ContactController::class, 'index']);
-    Route::post('/', [ContactController::class, 'contact']);
+    Route::post('/', [ContactController::class, 'contact'])->middleware('auth');
+
+});
+
+Route::prefix('common')->group(function (){
+    Route::get('/about', [CommonController::class, 'about']);
+    Route::get('/gallery', [CommonController::class, 'gallery']);
+
 });

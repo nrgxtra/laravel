@@ -39,7 +39,7 @@
                     {{$service->description}}
                 </div>
                 <div class="makeup_fl_btn">
-                    <a href="modal/booking.html" class="ajax-popup-link">Book Online</a>
+                    <a href="{{asset('storage/modal/booking.blade.php')}}" class="ajax-popup-link">Book Online</a>
                     <a href="/services" class="float-right"><i class="xcon-angle-double-left"></i>Back</a>
                 </div>
             </div>

@@ -78,9 +78,9 @@
                         <div class="makeup_fl_nav_list">
                             <ul>
                                 <li><a href="/"><span>Homepage</span></a></li>
-                                <li><a href="about.html"><span>About Us</span></a></li>
+                                <li><a href="/common/about"><span>About Us</span></a></li>
                                 <li><a href="/services"><span>Services</span></a></li>
-                                <li><a href="gallery.html"><span>Gallery</span></a></li>
+                                <li><a href="/common/gallery"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
                                 <li><a href="/booking"><span>Contact Us</span></a></li>
                             </ul>
@@ -167,9 +167,9 @@
                                     </div>
                                 </li>
                                 <li><a href="/"><span>Homepage</span><br/><span class="row"></span></a></li>
-                                <li><a href="about.html"><span>About Us</span></a></li>
-                                <li><a href="services.html"><span>Services</span></a></li>
-                                <li><a href="gallery.html"><span>Gallery</span></a></li>
+                                <li><a href="/common/about"><span>About Us</span></a></li>
+                                <li><a href="/servises"><span>Services</span></a></li>
+                                <li><a href="/common/gallery"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
                                 <li><a href="/booking"><span>Contact Us</span></a></li>
                             </ul>

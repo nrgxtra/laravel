@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SendContactConfirmation;
-use App\Jobs\SendContactEmail;
-use App\Mail\ContactConfirmation;
 use App\Mail\CustomerContact;
+use App\Mail\CustomerContactConfirmation;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -13,7 +11,8 @@ use Illuminate\Support\Facades\Mail;
 class ContactController extends Controller
 {
     public function index(){
-        return view('booking.contact');
+        $email = auth()->user()->email;
+        return view('booking.contact', ['email'=>$email]);
     }
 
     public function contact(Request $request)
@@ -29,8 +28,9 @@ class ContactController extends Controller
         $myself = 'sisi.eyebrows@gmail.com';
 
         Mail::to($myself)->queue(new CustomerContact($contact));
+        Mail::to($request->email)->queue(new CustomerContactConfirmation($contact));
 
-        return back()->with('success', 'Our Customer support will contact You shortly');
+        return back()->with('success', 'Your enquiry was sent!');
     }
 
 }

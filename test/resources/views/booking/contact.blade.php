@@ -31,7 +31,7 @@
                             <div class="fl-col-6 last">
                                 <div class="your-email">
                                     <label>Email<span>*</span></label>
-                                    <input type="text" name="email" placeholder="Email"/>
+                                    <input type="text" name="email" value="{{$email}}"/>
                                 </div>
                             </div>
                             <div class="fl-col-12">
