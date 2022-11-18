@@ -82,7 +82,7 @@
                                 <li><a href="/services"><span>Services</span></a></li>
                                 <li><a href="/common/gallery"><span>Gallery</span></a></li>
                                 <li><a href="/blog"><span>Our Blog</span></a></li>
-                                <li><a href="/booking"><span>Contact Us</span></a></li>
+                                <li><a href="/contact"><span>Contact Us</span></a></li>
                             </ul>
 
                         </div>
@@ -132,50 +132,6 @@
             <!-- CONTENT IN -->
             <div class="makeup_fl_content_in sticky_sidebar">
                 <div class="makeup_fl_content_in_qq">
-
-                    <!-- HEADER -->
-                    <div class="makeup_fl_header">
-                        <div class="makeup_fl_logo">
-                            <img src="{{asset('storage/img/logo.png')}}" alt=""/>
-                        </div>
-                        <div class="makeup_fl_header_trigger">
-                            <a href="#"></a>
-                            <span class="one"></span>
-                            <span class="two"></span>
-                            <span class="three"></span>
-                        </div>
-                        <div class="makeup_fl_booking_btn">
-                            <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i
-                                        class="xcon-home"></i></a></div>
-                            <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a>
-                            </div>
-                            <div class="btn_s_b"><a href="modal/opening.blade.php" class="ajax-popup-link"><i
-                                        class="xcon-clock-1"></i></a></div>
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="makeup_fl_header_nav_list">
-                            <ul>
-                                <li class="mversion">
-                                    <div class="makeup_fl_booking_btn">
-                                        <div class="btn_s_a"><a href="modal/address..blade.php" class="ajax-popup-link"><i
-                                                    class="xcon-home"></i></a></div>
-                                        <div class="btn_b"><a href="modal/booking.blade.php" class="ajax-popup-link">Book
-                                                Online</a></div>
-                                        <div class="btn_s_b"><a href="modal/opening.blade.php"
-                                                                class="ajax-popup-link"><i class="xcon-clock-1"></i></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><a href="/"><span>Homepage</span><br/><span class="row"></span></a></li>
-                                <li><a href="/common/about"><span>About Us</span></a></li>
-                                <li><a href="/servises"><span>Services</span></a></li>
-                                <li><a href="/common/gallery"><span>Gallery</span></a></li>
-                                <li><a href="/blog"><span>Our Blog</span></a></li>
-                                <li><a href="/booking"><span>Contact Us</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- /HEADER -->
                     <div class="makeup_fl_content_wrap">
                         <div class="row" style="text-align: end">
                             <x-flash-success/>

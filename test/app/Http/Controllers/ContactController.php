@@ -12,7 +12,7 @@ class ContactController extends Controller
 {
     public function index(){
         $email = auth()->user()->email;
-        return view('booking.contact', ['email'=>$email]);
+        return view('contact.contact', ['email'=>$email]);
     }
 
     public function contact(Request $request)

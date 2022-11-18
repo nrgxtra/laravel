@@ -177,7 +177,7 @@
     </div>
     <!-- /PACKAGE LIST -->
 
-    </div>
+
     <!-- /CONTENT WRAP -->
 
 @endsection

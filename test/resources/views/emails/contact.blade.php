@@ -1,11 +1,8 @@
+<x-mail::message>
+# Booking Request
 
-<h2>Hey, It's me, {{ $contact->name }}</h2>
-<br>
+{{$msg}}
 
-<strong>User details: </strong><br>
-<strong>Name: </strong>{{ $contact->name }} <br>
-<strong>Email: </strong>{{ $contact->email }} <br>
-<strong>Subject: </strong>{{ $contact->subject }} <br>
-<strong>Message: </strong>{{ $contact->message }} <br><br>
-
-Thank you
+Thanks,<br>
+{{ config('app.name') }}
+</x-mail::message>
