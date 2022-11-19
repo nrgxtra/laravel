@@ -1,8 +1,8 @@
 <x-mail::message>
-# Booking Request
+    # New Inquiry
 
-{{$msg}}
+    {{$msg}}
 
-Thanks,<br>
-{{ config('app.name') }}
+    Thanks,
+    {{ config('app.name') }}
 </x-mail::message>

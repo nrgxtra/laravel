@@ -25,7 +25,7 @@ class BookingMail extends Mailable
 
     public function build(){
         $msg = $this->msg;
-        return $this->markdown('emails.contact', compact('msg'));
+        return $this->markdown('emails.booking', compact('msg'));
     }
 
 

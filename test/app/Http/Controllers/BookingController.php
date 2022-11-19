@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\BookingMail;
+use App\Models\Booking;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
@@ -12,7 +14,7 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -32,7 +34,7 @@ class BookingController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
@@ -46,9 +48,10 @@ class BookingController extends Controller
             'message' => ['required', 'string'],
             'service' => ['required', 'string'],
         ]);
-        if ($validation->fails()){
+        if ($validation->fails()) {
             return response()->json(['code' => 400, 'msg' => $validation->errors()->first()]);
         }
+
         $name = $request->name;
         $email = $request->email;
         $phone = $request->phone;
@@ -56,6 +59,16 @@ class BookingController extends Controller
         $time = $request->time;
         $message = $request->message;
         $service = $request->service;
+
+        Booking::create([
+                'name' => $name,
+                'email' => $email,
+                'phone' => $phone,
+                'date' => $date,
+                'time' => $time,
+                'message' => $message,
+                'service' => $service,]
+        );
         $msg = "
         Name: $name
         Email: $email
@@ -66,14 +79,14 @@ class BookingController extends Controller
         Service: $service
         ";
         $receiver = 'sisi.eyebrows@gmail.com';
-        Mail::to($receiver)->send(new BookingMail($msg));
+        Mail::to($receiver)->queue(new BookingMail($msg));
         return response()->json(['code' => 200, 'msg' => 'Thank You for booking our service']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -84,7 +97,7 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -95,8 +108,8 @@ class BookingController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -107,7 +120,7 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

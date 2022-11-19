@@ -15,7 +15,7 @@ class ContactController extends Controller
         return view('contact.contact', ['email'=>$email]);
     }
 
-    public function contact(Request $request)
+    public function store(Request $request)
     {
         $data = $request->validate([
             'name' => 'string|required',
@@ -23,12 +23,28 @@ class ContactController extends Controller
             'subject' => 'string|required',
             'message' => 'string|required',
         ]);
+        $name = $request->name;
+        $email = $request->email;
+        $subject = $request->subject;
+        $message = $request->message;
 
-        $contact = Contact::create($data);
+        Contact::create($data);
         $myself = 'sisi.eyebrows@gmail.com';
+        $customer = auth()->user()->email;
 
-        Mail::to($myself)->queue(new CustomerContact($contact));
-        Mail::to($request->email)->queue(new CustomerContactConfirmation($contact));
+        $msg = "
+        Name: $name
+        Email: $email
+        Subject: $subject
+        Message: $message
+        ";
+        $ccMsg = "
+        Dear $name,
+        Thank You for interesting of $subject.
+        Our customer support will contact You shortly.
+        ";
+        Mail::to($myself)->queue(new CustomerContact($msg));
+        Mail::to($customer)->queue(new CustomerContactConfirmation($ccMsg));
 
         return back()->with('success', 'Your enquiry was sent!');
     }

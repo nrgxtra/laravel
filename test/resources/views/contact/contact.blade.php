@@ -19,7 +19,7 @@
                 <div class="book_online">
                     <div class="makeup_fl_form">
 
-                        <form action="/booking" method="post" class="contact_form" id="contact_form">
+                        <form action="/contact" method="post" class="contact_form" id="contact_form">
                             @csrf
 
                             <div class="fl-col-6">

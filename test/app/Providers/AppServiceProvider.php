@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Post;
 use App\Models\PostComment;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
@@ -31,5 +32,6 @@ class AppServiceProvider extends ServiceProvider
         Post::unguard();
         PostComment::unguard();
         Paginator::useBootstrap();
+//        Model::shouldBeStrict(! $this->app->isProduction());
     }
 }

@@ -55,6 +55,15 @@ Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
         Route::post('/service/{id}/pic', 'del');
     });
 
+    Route::controller(App\Http\Controllers\admin\PackageController::class)->group(function () {
+        Route::get('/package', 'index');
+        Route::get('/package/create', 'create');
+        Route::post('/package', 'store');
+        Route::get('/package/{package}/edit', 'edit');
+        Route::put('/package/{package}', 'save');
+        Route::post('/package/{package}', 'destroy');
+    });
+
     Route::controller(App\Http\Controllers\admin\GalleryController::class)->group(function () {
         Route::get('/gallery', 'index');
         Route::get('/gallery/create', 'create');
@@ -90,10 +99,10 @@ Route::prefix('services')->group(function (){
 
 Route::prefix('contact')->group(function (){
     Route::get('/', [ContactController::class, 'index'])->middleware('auth');
-    Route::post('/', [ContactController::class, 'contact'])->middleware('auth');
+    Route::post('/', [ContactController::class, 'store'])->middleware('auth');
 });
 
-Route::resource('booking-form', BookingController::class);
+Route::resource('booking-form', BookingController::class)->middleware('auth');
 
 Route::prefix('common')->group(function (){
     Route::get('/about', [CommonController::class, 'about']);

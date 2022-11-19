@@ -94,6 +94,12 @@
                     $("#res").html(success)
                 }
                 });
+
+            setTimeout(function() {
+                window.location.href =' /services'
+            }, 3000);
+
+
         })
     })
 
