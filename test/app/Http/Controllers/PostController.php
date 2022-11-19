@@ -69,7 +69,7 @@ class PostController extends Controller
         return redirect('/blog')->with('success', 'You just deleted a Post!');
     }
     public function manage(){
-        if (auth()->user()->hasRole('admin')){
+        if (auth()->user()->hasRole('admin|Super Admin')){
             return view('blog.manage',['posts'=>Post::all()]);
         }else{
             return view('blog.manage', ['posts'=> auth()->user()->posts()->get()]);

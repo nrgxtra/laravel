@@ -35,7 +35,7 @@
                         @endif
                         @if($service->discount_price)
                             <div class="discount">
-                                <span>${{$service->original_price}}</span></div>
+                                <span >${{$service->original_price}}</span></div>
                             <div class="newprice"><span>${{$service->discount_price}}</span></div>
                         @else
                             <div class="price"><span>${{$service->original_price}}</span></div>

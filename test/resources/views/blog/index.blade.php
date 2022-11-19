@@ -3,7 +3,7 @@
 
     <!-- COMMON -->
     <div class="makeup_fl_common">
-        @role('writer|admin')
+        @role('writer|admin|Super Admin')
         <button class="xcon-pencil"><a href="/blog/create">Write Post</a></button>
         <button class="xcon-gauge text-green-500 float-right" ><a href="/blog/manage">Manage Posts</a></button>
         @endrole

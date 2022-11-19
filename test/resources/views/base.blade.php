@@ -21,8 +21,6 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <!-- Styles -->
-    @livewireStyles
 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
@@ -31,12 +29,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>Homepage | Makeup</title>
+    <title>Homepage | Barbers</title>
 
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i"
           rel="stylesheet">
 
     <!-- STYLES -->
+    @livewireStyles
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/fontello.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/skeleton.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/base.css')}}"/>
@@ -47,6 +46,10 @@
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/datepicker.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/timepicker.css')}}"/>
     <link type="text/css" rel="stylesheet" href="{{asset('storage/css/style.css')}}"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css">
+
+
     <!--[if lt IE 9]> <script type="text/javascript" src="{{asset('storage/js/modernizr.custom.js')}}"></script> <![endif]-->
     <!-- /STYLES -->
     <!-- Favicon -->

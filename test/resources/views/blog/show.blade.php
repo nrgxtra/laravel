@@ -37,7 +37,9 @@
                         <p>{{$post->description}}</p>
                     </div>
                 </div>
-                <button class="xcon-angle-double-left"><a href="/blog">Back</a></button>
+                <div class="makeup_fl_btn">
+                <a href="/blog">Back</a>
+                </div>
                 <!--  COMMENT- SECTION -->
                 <div>
                     <form method="post" action="/blog/comment/create/{{$post->id}}">
