@@ -39,6 +39,7 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
+
         $validation = Validator::make($request->all(), [
             'name' => ['required', 'string'],
             'email' => ['required', 'email:filter'],
@@ -46,8 +47,9 @@ class BookingController extends Controller
             'date' => ['required', 'string'],
             'time' => ['required', 'string'],
             'message' => ['required', 'string'],
-            'service' => ['required', 'string'],
+            'service' => ['string'],
         ]);
+
         if ($validation->fails()) {
             return response()->json(['code' => 400, 'msg' => $validation->errors()->first()]);
         }

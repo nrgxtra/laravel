@@ -1,8 +1,10 @@
 <!-- BOOK ONLINE BOXLIGHT -->
 <div id="book_online" class="booking_popup">
+
     <div class="book_online">
         <div class="makeup_fl_form">
             <h3>Book Online</h3>
+
             <form class="contact_form" id="booking-form" action="{{ route('booking-form.store') }}" method="post">
                 <input type="hidden" id="token" value="{{csrf_token()}}"/>
                 <div id="res"></div>
@@ -39,12 +41,12 @@
                     </div>
 
                 </div>
-                <div class="fl-col-4 last">
-                    <div class="your-time">
-                        <label>Service: <span>*</span></label>
-                        <input id="service" type="text" class="time" placeholder="Service Name"/>
-                    </div>
-                </div>
+{{--                <div class="fl-col-4 last">--}}
+{{--                    <div class="your-time">--}}
+{{--                        <label>Service: <span>*</span></label>--}}
+{{--                        <input id="service" type="text" class="time"/>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
                 <div class="clearfix"></div>
                 <div class="your-message">
                     <label>Message: <span>*</span></label>
@@ -66,12 +68,15 @@
         </div>
     </div>
 </div>
+
 <!-- /BOOK ONLINE BOXLIGHT -->
 <script>
+
     $(document).ready(function () {
         $('#booking-form').submit(function (e) {
             e.preventDefault();
             let url = $(this).attr('action');
+            const serviceName = localStorage.getItem("service-name")
             $("#btn").attr('disabled', true);
             $.post(url, {
                 '_token': $("#token").val(),
@@ -81,7 +86,7 @@
                 date: $("#reservation-date").val(),
                 time: $("#time").val(),
                 message: $("#message").val(),
-                service: $("#service").val(),
+                service: serviceName,
             },  function (response) {
                 if (response.code === 400){
                     $("#btn").attr('disabled', false);

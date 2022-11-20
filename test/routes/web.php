@@ -107,5 +107,5 @@ Route::resource('booking-form', BookingController::class)->middleware('auth');
 Route::prefix('common')->group(function (){
     Route::get('/about', [CommonController::class, 'about']);
     Route::get('/gallery', [CommonController::class, 'gallery']);
-
 });
+
