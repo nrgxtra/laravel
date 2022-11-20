@@ -77,8 +77,8 @@
         @foreach($packages as $package)
             <!-- PACKAGE LIST #1 -->
             <div class="makeup_fl_package_list_in makeup_fl_masonry_in">
-                <div class="pckg_img">
-                    <img src="{{$package->picture ? asset('storage/' . $package->picture) : asset('storage/img/package1.jpg')}}" alt=""/>
+                <div class="pckg_img" >
+                    <img src="{{$package->picture ? asset('storage/' . $package->picture) : asset('storage/img/package1.jpg')}}" style=" max-height: 200px; object-fit: scale-down" alt=""/>
                 </div>
                 <div class="pckg_info">
                     <div class="title_holder">
@@ -124,15 +124,13 @@
             </div>
             <!-- /PACKAGE LIST #1 -->
         @endforeach
-
-        <div class="makeup_fl_pagination">
-            <div class="makeup_fl_pagination_in">
-                <div class="pg_number">
-                    {{$packages->links()}}
-                </div>
+    </div>
+    <div class="makeup_fl_pagination">
+        <div class="makeup_fl_pagination_in">
+            <div class="pg_number">
+                {{$packages->links()}}
             </div>
         </div>
-
     </div>
     <!-- /PACKAGE LIST -->
 
