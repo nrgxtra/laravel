@@ -139,7 +139,7 @@
                         <div class="row" style="text-align: end">
                             <x-flash-success/>
                             <x-flash-fail/>
-                            @if(Auth::check() && request()->user()->hasRole('Super Admin'))
+                            @if(Auth::check() && request()->user()->hasRole('Super Admin|store manager'))
                                 <div class="float-left">
                                     <a href="{{ route('admin') }}"><i class="xcon-at text-green-500"></i>ADMINISTRATION</a>
                                 </div>

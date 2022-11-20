@@ -21,56 +21,56 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
-Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
+Route::prefix('admin')->middleware('role:Super Admin|admin|store manager')->group(function (){
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('admin');
-    Route::get('/role', [AdminController::class, 'giveRole'])->name('give_role');
-    Route::post('/role/set', [AdminController::class, 'setRole'])->name('set_role');
-    Route::post('/role/remove', [AdminController::class, 'deleteRole'])->name('remove_role');
+    Route::get('/role', [AdminController::class, 'giveRole'])->name('give_role')->middleware('role:Super Admin');
+    Route::post('/role/set', [AdminController::class, 'setRole'])->name('set_role')->middleware('role:Super Admin');
+    Route::post('/role/remove', [AdminController::class, 'deleteRole'])->name('remove_role')->middleware('role:Super Admin');
 
     Route::controller(App\Http\Controllers\admin\CategoryController::class)->group(function () {
         Route::get('/category', 'index');
-        Route::get('/category/create', 'create');
-        Route::post('/category', 'store');
-        Route::get('/category/{category}/edit', 'edit');
-        Route::put('/category/{category}', 'save');
-        Route::post('/category/{category}', 'destroy');
+        Route::get('/category/create', 'create')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/category', 'store')->middleware('role:Super Admin|admin|store manager');
+        Route::get('/category/{category}/edit', 'edit')->middleware('role:Super Admin|admin|store manager');
+        Route::put('/category/{category}', 'save')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/category/{category}', 'destroy')->middleware('role:Super Admin|admin|store manager');
     });
 
     Route::controller(App\Http\Controllers\admin\TeamController::class)->group(function () {
-        Route::get('/team', 'index');
-        Route::get('/team/create', 'create');
-        Route::post('/team', 'store');
-        Route::get('/team/{member}/edit', 'edit');
-        Route::put('/team/{member}', 'save');
-        Route::post('/team/{member}', 'destroy');
+        Route::get('/team', 'index')->middleware('role:Super Admin');
+        Route::get('/team/create', 'create')->middleware('role:Super Admin');
+        Route::post('/team', 'store')->middleware('role:Super Admin');
+        Route::get('/team/{member}/edit', 'edit')->middleware('role:Super Admin');
+        Route::put('/team/{member}', 'save')->middleware('role:Super Admin');
+        Route::post('/team/{member}', 'destroy')->middleware('role:Super Admin');
     });
 
     Route::controller(App\Http\Controllers\admin\ServiceController::class)->group(function () {
-        Route::get('/service', 'index');
-        Route::get('/service/create', 'create');
-        Route::post('/service', 'store');
-        Route::get('/service/{service}/edit', 'edit');
-        Route::put('/service/{service}', 'save');
-        Route::post('/service/{service}', 'destroy');
-        Route::post('/service/{id}/pic', 'del');
+        Route::get('/service', 'index')->middleware('role:Super Admin|admin|store manager');
+        Route::get('/service/create', 'create')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/service', 'store')->middleware('role:Super Admin|admin|store manager');
+        Route::get('/service/{service}/edit', 'edit')->middleware('role:Super Admin|admin|store manager');
+        Route::put('/service/{service}', 'save')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/service/{service}', 'destroy')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/service/{id}/pic', 'del')->middleware('role:Super Admin|admin|store manager');
     });
 
     Route::controller(App\Http\Controllers\admin\PackageController::class)->group(function () {
-        Route::get('/package', 'index');
-        Route::get('/package/create', 'create');
-        Route::post('/package', 'store');
-        Route::get('/package/{package}/edit', 'edit');
-        Route::put('/package/{package}', 'update');
-        Route::post('/package/{package}', 'destroy');
+        Route::get('/package', 'index')->middleware('role:Super Admin|admin|store manager');
+        Route::get('/package/create', 'create')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/package', 'store')->middleware('role:Super Admin|admin|store manager');
+        Route::get('/package/{package}/edit', 'edit')->middleware('role:Super Admin|admin|store manager');
+        Route::put('/package/{package}', 'update')->middleware('role:Super Admin|admin|store manager');
+        Route::post('/package/{package}', 'destroy')->middleware('role:Super Admin|admin|store manager');
     });
 
     Route::controller(App\Http\Controllers\admin\GalleryController::class)->group(function () {
-        Route::get('/gallery', 'index');
-        Route::get('/gallery/create', 'create');
-        Route::post('/gallery', 'store');
-        Route::get('/gallery/{gallery}/edit', 'edit');
-        Route::put('/gallery/{gallery}', 'save');
-        Route::post('/gallery/{gallery}', 'destroy');
+        Route::get('/gallery', 'index')->middleware('role:Super Admin|admin');
+        Route::get('/gallery/create', 'create')->middleware('role:Super Admin|admin');
+        Route::post('/gallery', 'store')->middleware('role:Super Admin|admin');
+        Route::get('/gallery/{gallery}/edit', 'edit')->middleware('role:Super Admin|admin');
+        Route::put('/gallery/{gallery}', 'save')->middleware('role:Super Admin|admin');
+        Route::post('/gallery/{gallery}', 'destroy')->middleware('role:Super Admin|admin');
     });
 
 });
