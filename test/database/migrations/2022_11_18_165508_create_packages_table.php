@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->unique();
+            $table->string('name');
             $table->string('picture')->nullable();
+            $table->string('services')->nullable();
             $table->integer('discount');
             $table->decimal('total',8,2);
             $table->timestamps();

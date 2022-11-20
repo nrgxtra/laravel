@@ -17,7 +17,7 @@
                             <thead>
                             <tr>
                                 <th class="text-center">Name</th>
-                                <th class="text-center">Slug</th>
+                                <th class="text-center">Price</th>
                                 <th class="text-center">Edit</th>
                                 <th class="text-center">Delete</th>
                             </tr>
@@ -26,7 +26,14 @@
                             @foreach($services as $service)
                                 <tr>
                                     <td>{{$service->name}}</td>
-                                    <td>{{$service->slug}}</td>
+                                    <td>
+                                        @if($service->discount_price)
+                                            <span class="text-red-500">{{$service->discount_price}}</span>
+                                        @else
+                                            <span>{{$service->original_price}}</span>
+                                        @endif
+
+                                    </td>
                                     <td class="text-center"><a href="/admin/service/{{$service->id}}/edit"
                                                                class="btn btn-success">Edit</a>
                                     </td>

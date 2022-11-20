@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Newsletter;
@@ -71,7 +72,9 @@ class HomeController extends Controller
         $role4->givePermissionTo($permission11);
         $user1=User::find(1);
         $user1->assignRole(4);
-        return view('home');
+
+        $packages = Package::latest()->paginate(2);
+        return view('home', ['packages'=>$packages]);
     }
 
     public function subscribe(Request $request){
@@ -88,4 +91,5 @@ class HomeController extends Controller
             return back()->with('success', 'Thank You for subscribing');
         }
     }
+
 }

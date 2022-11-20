@@ -17,6 +17,7 @@
                             <thead>
                             <tr>
                                 <th class="text-center">Name</th>
+                                <th class="text-center">Services</th>
                                 <th class="text-center">Discount</th>
                                 <th class="text-center">Total</th>
                                 <th class="text-center">Edit</th>
@@ -27,6 +28,14 @@
                             @foreach($packages as $package)
                                 <tr>
                                     <td>{{$package->name}}</td>
+                                    <td>
+                                        @foreach($package->services as $ids)
+                                            @php
+                                                $sv = \App\Models\Service::find($ids);
+                                            @endphp
+                                            <span>{{$sv->name}}, </span><br>
+                                        @endforeach
+                                    </td>
                                     <td>{{$package->discount}}%</td>
                                     <td>{{$package->total}}</td>
                                     <td class="text-center"><a href="/admin/package/{{$package->id}}/edit"

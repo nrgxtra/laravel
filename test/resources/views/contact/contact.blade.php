@@ -46,9 +46,11 @@
                                 <label>Message: <span>*</span></label>
                                 <textarea name="message" placeholder="Message" cols="3" rows="15"></textarea>
                             </div>
-                            <div class="button">
-                                <button type="submit" class="btn-dark">Book Online</button>
-                            </div>
+
+                                <div class="footer_btn">
+                                    <button type="submit" class="text-center text-grey-100 rounded mt-4 py-1 px-3 hover:bg-violet-500" style="background: #371352">Message us</button>
+                                </div>
+
                             <!-- RETURN MESSAGES -->
                             <div class="returnmessage"
                                  data-success="Your message has been received, We will contact you soon."></div>

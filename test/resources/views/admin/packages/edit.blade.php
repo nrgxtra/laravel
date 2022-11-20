@@ -6,13 +6,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="cart-header">
-                    <h3>Add Package
-                        <a href="{{url('admin/package')}}" class="btn btn-primary btn-sm float-end">Back</a>
+                    <h3>Edit Package
+                        <a href="/admin/package" class="btn btn-primary btn-sm float-end">Back</a>
                     </h3>
                 </div>
                 <div class="card-body">
-                    <form action="/admin/package" method="post" enctype="multipart/form-data">
+                    <form action="/admin/package/{{$package->id}}" method="post" enctype="multipart/form-data">
                         @csrf
+                        @method('put')
                         <div class="row">
                             <div class="col md-3 mb-3">
                                 <label>Name</label>
@@ -28,8 +29,16 @@
                                 <label>Service</label>
                                 <div>
                                     <select class="selectpicker" multiple data-live-search="true" name="services[]">
-                                        @foreach($services as $service)
-                                            <option value="{{$service->id}}">{{$service->name}}</option>
+                                        @foreach($package->services as $service)
+                                            @php
+                                                $serv = \App\Models\Service::find($service);
+                                            @endphp
+                                            <option value="{{$serv->id}}">{{$serv->name}}</option>
+                                        @endforeach
+                                        @foreach($allServices as $optService)
+                                            @if(!in_array($optService->id, $package->services ) )
+                                                    <option class="text-green-500" value="{{$optService->id}}">{{$optService->name}}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                 </div>

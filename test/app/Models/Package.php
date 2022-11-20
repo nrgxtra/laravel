@@ -9,9 +9,9 @@ class Package extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = ['id'];
 
-    public function services(){
-        return $this->hasMany(Service::class);
-    }
+    protected $casts = [
+        'services' => 'array',
+    ];
 }

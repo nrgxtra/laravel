@@ -74,109 +74,67 @@
 
     <!-- PACKAGE LIST -->
     <div class="makeup_fl_package_list makeup_fl_masonry">
-
-        <!-- PACKAGE LIST #1 -->
-        <div class="makeup_fl_package_list_in makeup_fl_masonry_in">
-            <div class="pckg_img">
-                <img src="{{asset('storage/img/package1.jpg')}}" alt=""/>
-            </div>
-            <div class="pckg_info">
-                <div class="title_holder">
-                    <h3>Party Makeup Package</h3>
-                    <span>Time Duration : 2 - 3 hours</span>
+        @foreach($packages as $package)
+            <!-- PACKAGE LIST #1 -->
+            <div class="makeup_fl_package_list_in makeup_fl_masonry_in">
+                <div class="pckg_img">
+                    <img src="{{$package->picture ? asset('storage/' . $package->picture) : asset('storage/img/package1.jpg')}}" alt=""/>
                 </div>
-                <div class="price_list">
-                    <ul>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Makeup Consultation</span>
-                                <span class="span2">$19.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Signature Haircut &amp; Style</span>
-                                <span class="span2">$25.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Airbrush Makeup</span>
-                                <span class="span2">$31.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">False Lash Application</span>
-                                <span class="span2">$24.00</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="total"><span>Total: $99.00</span></div>
-                <div class="footer">
-                    <div class="footer_btn">
-                        <a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a>
+                <div class="pckg_info">
+                    <div class="title_holder">
+                        <h3>{{$package->name}}</h3>
+                        <span>Time Duration : 2 - 3 hours</span>
                     </div>
+                    <div class="price_list">
+                        <ul>
+                            @foreach($package->services as $sId)
+                                @php
+                                    $service = \App\Models\Service::find($sId);
+                                @endphp
+                                <li>
+                                    <div class="price_li">
+                                        <span class="span1">{{$service->name}}</span>
+                                        <span class="span2">${{$service->original_price}}</span>
+                                    </div>
+                                </li>
+                            @endforeach
+
+                        </ul>
+                    </div>
+                    <div class="total"><span>Your discount: {{$package->discount}}%</span></div>
+                    <div class="total"><span>Total: ${{$package->total}}</span></div>
+                    <div class="footer">
+                        <div class="footer_btn">
+                            <form id="serv">
+                                <input type="hidden" id="tvae" value="{{$package->name}}" />
+                                <a href="{{ route('booking-form.index') }}" class="ajax-popup-link">Book Online</a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    const btn = document.getElementById('serv');
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const service = document.getElementById('tvae');
+                        const serviceValue = service.value;
+                        localStorage.setItem('service-name', serviceValue);
+                    });
+                </script>
+            </div>
+            <!-- /PACKAGE LIST #1 -->
+        @endforeach
+
+        <div class="makeup_fl_pagination">
+            <div class="makeup_fl_pagination_in">
+                <div class="pg_number">
+                    {{$packages->links()}}
                 </div>
             </div>
         </div>
-        <!-- /PACKAGE LIST #1 -->
-
-
-        <!-- PACKAGE LIST #2 -->
-        <div class="makeup_fl_package_list_in makeup_fl_masonry_in">
-            <div class="pckg_img">
-                <img src="{{asset('storage/img/package2.jpg')}}" alt=""/>
-            </div>
-            <div class="pckg_info">
-                <div class="title_holder">
-                    <h3>Commercial Makeup Package</h3>
-                    <span>Time Duration : 2 - 3 hours</span>
-                </div>
-                <div class="price_list">
-                    <ul>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Makeup Consultation</span>
-                                <span class="span2">$19.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Event Makeup Application</span>
-                                <span class="span2">$35.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Benefit Lash Application</span>
-                                <span class="span2">$10.00</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="price_li">
-                                <span class="span1">Lip &amp; Chin Wax</span>
-                                <span class="span2">$22.00</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="total"><span>Total: $86.00</span></div>
-                <div class="footer">
-                    <div class="footer_btn">
-                        <a href="modal/booking.blade.php" class="ajax-popup-link">Book Online</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /PACKAGE LIST #2 -->
 
     </div>
     <!-- /PACKAGE LIST -->
-
-
-    <!-- /CONTENT WRAP -->
 
 @endsection
 

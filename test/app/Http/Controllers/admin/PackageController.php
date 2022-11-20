@@ -40,6 +40,7 @@ class PackageController extends Controller
         if ($request->hasFile('image')){
             $data['picture'] = $request->file('image')->store('packages', 'public');
         }
+        $data['services'] = $services;
         Package::create($data);
         return redirect('/admin/package')->with('success', 'Package Created');
 
@@ -54,8 +55,44 @@ class PackageController extends Controller
 
     public function edit($id){
         $package = Package::find($id);
-        $services = $package->services();
-        return view('admin.packages.edit', ['package'=>$package, 'services'=>$services]);
+        $allServices = Service::all();
+
+        return view('admin.packages.edit', ['package'=>$package, 'allServices'=>$allServices]);
+    }
+
+    public function update(Request $request, $id){
+        $package = Package::find($id);
+        $data = $request->validate([
+            'name' => 'required|string',
+            'discount' => 'required|integer',
+        ]);
+        if ($request->services){
+            $services = $request->services;
+        }else{
+            $services = $package->services;
+        }
+
+
+        $price = 0.00;
+        foreach($services as $serviceId)
+        {
+            $serv=Service::find($serviceId);
+            $price += $serv->original_price;
+        }
+        $discount = $request['discount'];
+        $total = $this->calculate($price, $discount);
+        $data['total'] = $total;
+        if ($request->hasFile('image')){
+            $data['picture'] = $request->file('image')->store('packages', 'public');
+        }
+        $data['services'] = $services;
+        $package->update($data);
+        return redirect('/admin/package')->with('success', 'Package Updated');
+    }
+
+    public function destroy(Package $package){
+        $package->delete();
+        return back()->with('success', 'Package Deleted');
     }
 
 }

@@ -60,7 +60,7 @@ Route::prefix('admin')->middleware('role:Super Admin')->group(function (){
         Route::get('/package/create', 'create');
         Route::post('/package', 'store');
         Route::get('/package/{package}/edit', 'edit');
-        Route::put('/package/{package}', 'save');
+        Route::put('/package/{package}', 'update');
         Route::post('/package/{package}', 'destroy');
     });
 
