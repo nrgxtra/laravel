@@ -38,10 +38,17 @@
                 <div class="common_info">
                     {{$service->description}}
                 </div>
+
                 <form id="serv">
                     <input type="hidden" id="tvae" value="{{$service->name}}" />
+                    @auth
                     <a href="{{ route('booking-form.index') }}" class="ajax-popup-link">Book Online</a>
+                    @endauth
+                    @guest
+                        <a href="{{ route('login') }}" class="ajax-popup-link">Book Online</a>
+                    @endguest
                 </form>
+
                 <div class="makeup_fl_btn">
                     <a href="/services" class="float-right"><i class="xcon-angle-double-left"></i>Back</a>
                 </div>

@@ -2,21 +2,23 @@
 @section('content')
     <!-- FOTORAMA -->
     <div class="makeup_fl_fotorama">
-        <div class="fotorama" data-nav="thumbs"  data-autoplay="4000" data-loop="true" data-keyboard="true"  data-arrows="true" data-click="true" data-swipe="true" data-stopautoplayontouch="false" data-transition="slide" data-fit="cover" data-width="100%">
+        <div class="fotorama" data-nav="thumbs" data-autoplay="4000" data-loop="true" data-keyboard="true"
+             data-arrows="true" data-click="true" data-swipe="true" data-stopautoplayontouch="false"
+             data-transition="slide" data-fit="cover" data-width="100%">
             <a href="{{asset('storage/img/fotorama/full1.jpg')}}">
-                <img src="{{asset('storage/img/fotorama/thumb1.jpg')}}" width="144" height="96" alt="" />
+                <img src="{{asset('storage/img/fotorama/thumb1.jpg')}}" width="144" height="96" alt=""/>
             </a>
-            <a href="{{asset('storage/img/fotorama/full2.jpg')}}" >
-                <img src="{{asset('storage/img/fotorama/thumb2.jpg')}} " width="144" height="96" alt="" />
+            <a href="{{asset('storage/img/fotorama/full2.jpg')}}">
+                <img src="{{asset('storage/img/fotorama/thumb2.jpg')}} " width="144" height="96" alt=""/>
             </a>
-            <a href="{{asset('storage/img/fotorama/full3.jpg')}}" >
-                <img src="{{asset('storage/img/fotorama/thumb3.jpg')}}" width="144" height="96" alt="" />
+            <a href="{{asset('storage/img/fotorama/full3.jpg')}}">
+                <img src="{{asset('storage/img/fotorama/thumb3.jpg')}}" width="144" height="96" alt=""/>
             </a>
-            <a href="{{asset('storage/img/fotorama/full4.jpg')}}" >
-                <img src="{{asset('storage/img/fotorama/thumb4.jpg')}}" width="144" height="96" alt="" />
+            <a href="{{asset('storage/img/fotorama/full4.jpg')}}">
+                <img src="{{asset('storage/img/fotorama/thumb4.jpg')}}" width="144" height="96" alt=""/>
             </a>
-            <a href="{{asset('storage/img/fotorama/full5.jpg')}}" >
-                <img src="{{asset('storage/img/fotorama/thumb5.jpg')}}" width="144" height="96" alt="" />
+            <a href="{{asset('storage/img/fotorama/full5.jpg')}}">
+                <img src="{{asset('storage/img/fotorama/thumb5.jpg')}}" width="144" height="96" alt=""/>
             </a>
         </div>
     </div>
@@ -77,8 +79,10 @@
         @foreach($packages as $package)
             <!-- PACKAGE LIST #1 -->
             <div class="makeup_fl_package_list_in makeup_fl_masonry_in">
-                <div class="pckg_img" >
-                    <img src="{{$package->picture ? asset('storage/' . $package->picture) : asset('storage/img/package1.jpg')}}" style=" max-height: 200px; object-fit: scale-down" alt=""/>
+                <div class="pckg_img">
+                    <img
+                        src="{{$package->picture ? asset('storage/' . $package->picture) : asset('storage/img/package1.jpg')}}"
+                        style=" max-height: 200px; object-fit: scale-down" alt=""/>
                 </div>
                 <div class="pckg_info">
                     <div class="title_holder">
@@ -105,10 +109,16 @@
                     <div class="total"><span>Total: ${{$package->total}}</span></div>
                     <div class="footer">
                         <div class="footer_btn">
-                            <form id="serv">
-                                <input type="hidden" id="tvae" value="{{$package->name}}" />
-                                <a href="{{ route('booking-form.index') }}" class="ajax-popup-link">Book Online</a>
-                            </form>
+
+                                <form id="serv">
+                                    <input type="hidden" id="tvae" value="{{$package->name}}"/>
+                                    @auth
+                                    <a href="{{ route('booking-form.index') }}" class="ajax-popup-link">Book Online</a>
+                                    @endauth
+                                    @guest
+                                        <a href="{{ route('login') }}" class="ajax-popup-link">Book Online</a>
+                                    @endguest
+                                </form>
                         </div>
                     </div>
                 </div>
