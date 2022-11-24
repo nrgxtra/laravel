@@ -5,28 +5,31 @@ namespace App\Http\Controllers;
 use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Newsletter;
+use PhpOption\None;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class HomeController extends Controller
 {
-    public function home() {
-        Role::firstOrCreate(['name'=>'writer']);
-        Role::firstOrCreate(['name'=>'store manager']);
-        Role::firstOrCreate(['name'=>'admin']);
-        Role::firstOrCreate(['name'=>'Super Admin']);
-        Permission::firstOrCreate(['name'=>'write post']);
-        Permission::firstOrCreate(['name'=>'edit post']);
-        Permission::firstOrCreate(['name'=>'delete post']);
-        Permission::firstOrCreate(['name'=>'add product']);
-        Permission::firstOrCreate(['name'=>'edit product']);
-        Permission::firstOrCreate(['name'=>'delete product']);
-        Permission::firstOrCreate(['name'=>'add user']);
-        Permission::firstOrCreate(['name'=>'edit user']);
-        Permission::firstOrCreate(['name'=>'delete user']);
-        Permission::firstOrCreate(['name'=>'edit comment']);
-        Permission::firstOrCreate(['name'=>'delete comment']);
+    public function home()
+    {
+        Role::firstOrCreate(['name' => 'writer']);
+        Role::firstOrCreate(['name' => 'store manager']);
+        Role::firstOrCreate(['name' => 'admin']);
+        Role::firstOrCreate(['name' => 'Super Admin']);
+        Permission::firstOrCreate(['name' => 'write post']);
+        Permission::firstOrCreate(['name' => 'edit post']);
+        Permission::firstOrCreate(['name' => 'delete post']);
+        Permission::firstOrCreate(['name' => 'add product']);
+        Permission::firstOrCreate(['name' => 'edit product']);
+        Permission::firstOrCreate(['name' => 'delete product']);
+        Permission::firstOrCreate(['name' => 'add user']);
+        Permission::firstOrCreate(['name' => 'edit user']);
+        Permission::firstOrCreate(['name' => 'delete user']);
+        Permission::firstOrCreate(['name' => 'edit comment']);
+        Permission::firstOrCreate(['name' => 'delete comment']);
         $role1 = Role::findById(1);
         $permission1 = Permission::findById(1);
         $permission2 = Permission::findById(2);
@@ -70,23 +73,34 @@ class HomeController extends Controller
         $role4->givePermissionTo($permission9);
         $role4->givePermissionTo($permission10);
         $role4->givePermissionTo($permission11);
-        $user1=User::find(1);
+
+        if (!User::find(1)){
+            User::create(['name' => 'admin',
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('1234qwer'),]);
+            $user1 = User::find(1);
+        }else{
+            $user1 = User::find(1);
+        }
+
         $user1->assignRole(4);
 
+
         $packages = Package::latest()->paginate(2);
-        return view('home', ['packages'=>$packages]);
+        return view('home', ['packages' => $packages]);
     }
 
-    public function subscribe(Request $request){
+    public function subscribe(Request $request)
+    {
         $request->validate([
-           'sub_email' => 'required|email',
+            'sub_email' => 'required|email',
         ]);
 
         $mail = $request->sub_email;
         $already_subscribed = Newsletter::hasMember($mail);
-        if($already_subscribed){
+        if ($already_subscribed) {
             return back()->with('fail', 'You are already subscribed');
-        }else{
+        } else {
             Newsletter::subscribe($request->sub_email);
             return back()->with('success', 'Thank You for subscribing');
         }
